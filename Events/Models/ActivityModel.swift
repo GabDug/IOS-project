@@ -11,8 +11,8 @@ import SwiftUI
 struct Root: Decodable {
     let activities : [Activity]
     enum CodingKeys: String, CodingKey {
-            case activities = "records"
-        }
+        case activities = "records"
+    }
 }
 
 struct Activity: Hashable, Codable, Identifiable {
@@ -35,12 +35,12 @@ struct Fields: Hashable, Codable {
     var speakersId: [String]?
     
     enum CodingKeys: String, CodingKey {
-            case name = "Activity"
-            case description = "Notes"
-            case type = "Type"
-            case startDate = "Start"
-            case endDate = "End"
-            case locationId = "Location"
-            case speakersId = "Speaker(s)"
-        }
+        case name = "Activity"
+        case description = "Notes"
+        case type = "Type"
+        case startDate = "Start"
+        case endDate = "End"
+        case locationId = "Location"
+        case speakersId = "Speaker(s)"
+    }
 }

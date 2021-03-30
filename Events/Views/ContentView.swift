@@ -17,10 +17,10 @@ struct ContentView: View {
                 Text("Schedule")
                 
             }
-            SponsorsView().tabItem {
+        SponsorsView()
+            .tabItem {
                 Image(systemName: "rosette")
                 Text("Sponsors")
-                
             }
         }
     }
