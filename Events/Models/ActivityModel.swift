@@ -1,0 +1,46 @@
+//
+//  ActivityModel.swift
+//  Events
+//
+//  Created by Gabriel on 30/03/2021.
+//
+
+import Foundation
+import SwiftUI
+
+struct Root : Decodable {
+    let activities : [Activity]
+    enum CodingKeys: String, CodingKey {
+            case activities = "records"
+        }
+}
+
+struct Activity: Hashable, Codable, Identifiable {
+    var id: String
+    var createdTime: String
+    var fields: Fields
+    
+}
+
+struct Fields: Hashable, Codable {
+    var type: String
+    
+    var startDate: String
+    var endDate	: String
+    
+    var name:String
+    var description: String?
+    
+    var locationId: [String]?
+    var speakersId: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+            case name = "Activity"
+            case description = "Notes"
+            case type = "Type"
+            case startDate = "Start"
+            case endDate = "End"
+            case locationId = "Location"
+            case speakersId = "Speaker(s)"
+        }
+}
