@@ -9,7 +9,14 @@ import SwiftUI
 
 struct SponsorsView: View {
     var body: some View {
-        Text("Sponsors here!")
+        NavigationView {
+            // TODO: categorize sponsors
+            List(sponsors) { sponsor in
+                SponsorsCategoryRow(categoryName: sponsor.fields.status, items: sponsors)
+
+            }
+            .navigationTitle("Sponsors")
+        }
     }
 }
 

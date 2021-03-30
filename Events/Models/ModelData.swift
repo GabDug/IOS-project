@@ -5,6 +5,13 @@ private var  rootSponsors: RootSponsors = load("sponsor.json")
 var activities: [Activity] = root.activities
 var sponsors: [Sponsor] = rootSponsors.sponsors
 
+var sponsorCategories: [String: [Sponsor]] {
+    Dictionary(
+        grouping: sponsors,
+        by: { $0.fields.status }
+    )
+}
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
