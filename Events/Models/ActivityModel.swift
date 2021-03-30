@@ -17,7 +17,7 @@ struct Root : Decodable {
 
 struct Activity: Hashable, Codable, Identifiable {
     var id: String
-    var createdTime: String
+    var createdTime: Date
     var fields: Fields
     
 }
@@ -25,8 +25,8 @@ struct Activity: Hashable, Codable, Identifiable {
 struct Fields: Hashable, Codable {
     var type: String
     
-    var startDate: String
-    var endDate	: String
+    var startDate: Date
+    var endDate	: Date
     
     var name:String
     var description: String?
