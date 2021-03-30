@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ActivitesList()
+            .padding(.all, 0.0)
     }
 }
 

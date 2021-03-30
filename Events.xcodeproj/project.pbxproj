@@ -45,6 +45,7 @@
 		0AAA523F2613229B00C33AA3 /* ActivitiesDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesDetails.swift; sourceTree = "<group>"; };
 		0AAA52472613230200C33AA3 /* ActivityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRow.swift; sourceTree = "<group>"; };
 		0AB413FC261327F3009A8375 /* activities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activities.json; sourceTree = "<group>"; };
+		0AB4140126135CA7009A8375 /* Events.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Events.entitlements; sourceTree = "<group>"; };
 		0ADA0C4026131DC0007383DB /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADA0C4326131DC0007383DB /* EventsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApp.swift; sourceTree = "<group>"; };
 		0ADA0C4526131DC0007383DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		0ADA0C4226131DC0007383DB /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				0AB4140126135CA7009A8375 /* Events.entitlements */,
 				0AB413FB261327E5009A8375 /* Resources */,
 				0AAA522726131F3000C33AA3 /* Models */,
 				0ADA0C4326131DC0007383DB /* EventsApp.swift */,
@@ -465,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Events/Preview Content\"";
 				DEVELOPMENT_TEAM = TQ5ST5M9X9;
@@ -477,6 +480,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.neatup.efrei.Events;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Events/Preview Content\"";
 				DEVELOPMENT_TEAM = TQ5ST5M9X9;
@@ -499,6 +504,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.neatup.efrei.Events;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
