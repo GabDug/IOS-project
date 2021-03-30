@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Root : Decodable {
+struct Root: Decodable {
     let activities : [Activity]
     enum CodingKeys: String, CodingKey {
             case activities = "records"

@@ -8,14 +8,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.IDEConstraintErrorBreakpoint">
          <BreakpointContent
             uuid = "65AB6F23-483B-4049-ACE6-329F6A771EC4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             breakpointStackSelectionBehavior = "1">
             <Locations>
                <Location
                   uuid = "65AB6F23-483B-4049-ACE6-329F6A771EC4 - ca5a5abeb0dbd6ce"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "LAYOUT_CONSTRAINTS_NOT_SATISFIABLE"
@@ -25,7 +25,7 @@
                </Location>
                <Location
                   uuid = "65AB6F23-483B-4049-ACE6-329F6A771EC4 - ba3ad5676a792f38"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "UIViewAlertForUnsatisfiableConstraints"

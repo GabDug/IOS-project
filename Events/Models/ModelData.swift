@@ -1,7 +1,9 @@
 import Foundation
 
-var root: Root = load("activities.json")
+private var root: Root = load("activities.json")
+private var  rootSponsors: RootSponsors = load("sponsor.json")
 var activities: [Activity] = root.activities
+var sponsors: [Sponsor] = rootSponsors.sponsors
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
