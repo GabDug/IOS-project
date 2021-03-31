@@ -11,11 +11,13 @@ struct SponsorCategoryItem: View {
     var sponsor: Sponsor
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 25.0, style: .continuous)
                 .fill(Color.purple) // TODO: get a random color from id
                 .frame(width: 155, height: 155)
             Text(sponsor.fields.name)
+                .foregroundColor(.primary)
+                .frame(width: 155)
         }
         
     }
