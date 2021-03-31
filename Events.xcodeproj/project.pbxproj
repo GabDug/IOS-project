@@ -25,6 +25,7 @@
 		0ADA0C4B26131DC1007383DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ADA0C4A26131DC1007383DB /* Preview Assets.xcassets */; };
 		0ADA0C5626131DC1007383DB /* EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C5526131DC1007383DB /* EventsTests.swift */; };
 		0ADA0C6126131DC1007383DB /* EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C6026131DC1007383DB /* EventsUITests.swift */; };
+		C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86272DA2614553E00C91EF1 /* LocationUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		0ADA0C5C26131DC1007383DB /* EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADA0C6026131DC1007383DB /* EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUITests.swift; sourceTree = "<group>"; };
 		0ADA0C6226131DC1007383DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C86272DA2614553E00C91EF1 /* LocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		0ADA0C4226131DC0007383DB /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				C86272D92614552600C91EF1 /* Utils */,
 				0A55E68B2613ACDA0063D607 /* Colors.xcassets */,
 				0AB4140126135CA7009A8375 /* Events.entitlements */,
 				0AB413FB261327E5009A8375 /* Resources */,
@@ -194,6 +197,14 @@
 				0ADA0C6226131DC1007383DB /* Info.plist */,
 			);
 			path = EventsUITests;
+			sourceTree = "<group>";
+		};
+		C86272D92614552600C91EF1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C86272DA2614553E00C91EF1 /* LocationUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
 				0AB414162613626D009A8375 /* SponsorsView.swift in Sources */,
 				0AB4141126135EFB009A8375 /* SponsorModel.swift in Sources */,
