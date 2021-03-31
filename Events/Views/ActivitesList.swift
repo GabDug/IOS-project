@@ -23,20 +23,7 @@ struct ActivitesList: View {
         NavigationView {
             HStack {
                 ZStack {
-                    // Background gradient
-                    LinearGradient(gradient: Gradient(colors: [Color.pinkColor, Color.purpleColor]), startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
-                    // Background Circles
-                    VStack {
-                        Capsule()
-                            .fill(Color.OrangeColor)
-                            .frame(width: 200, height: 200)
-                            .offset(x: -150, y: -55)
-                        Spacer()
-                        Capsule()
-                            .fill(Color.OrangeColor)
-                            .frame(width: 200, height: 200)
-                            .offset(x: 150, y: 105)
-                    }
+                    BackgroundView()
                     // Actual Scrollview
                     ScrollView {
                         VStack {

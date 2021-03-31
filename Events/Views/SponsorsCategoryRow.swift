@@ -17,12 +17,14 @@ struct SponsorsCategoryRow: View {
                 Text(categoryName)
                     .font(.headline)
             }
+            .padding(.leading)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top ) {
                     ForEach(items) { sponsor in
                         SponsorCategoryItem(sponsor: sponsor)
                     }
+                    .padding(.leading)
                 }
             }
             .frame(height:185)
