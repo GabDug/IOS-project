@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		050BAF5E2613712100020AC2 /* SponsorsCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BAF5D2613712100020AC2 /* SponsorsCategoryRow.swift */; };
 		050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */; };
+		0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589331826146B1B00278B87 /* SponsorDetails.swift */; };
 		0A55E68C2613ACDA0063D607 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A55E68B2613ACDA0063D607 /* Colors.xcassets */; };
 		0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6A9F892614658E004178AB /* BackgroundView.swift */; };
 		0AAA522926131F7600C33AA3 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA522826131F7600C33AA3 /* ActivityModel.swift */; };
@@ -51,6 +52,7 @@
 		050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorCategoryItem.swift; sourceTree = "<group>"; };
 		050C7273261452170002543B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0A3EF8182614684300E8C4F8 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		0589331826146B1B00278B87 /* SponsorDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorDetails.swift; sourceTree = "<group>"; };
 		0A55E68B2613ACDA0063D607 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0A55E6932613C1D40063D607 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A6A9F892614658E004178AB /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				0ADA0C4526131DC0007383DB /* ContentView.swift */,
 				0AB414152613626D009A8375 /* SponsorsView.swift */,
+				0589331826146B1B00278B87 /* SponsorDetails.swift */,
 				0AAA523A2613227700C33AA3 /* ActivitesList.swift */,
 				0AAA52472613230200C33AA3 /* ActivityRow.swift */,
 				0AAA523F2613229B00C33AA3 /* ActivitiesDetails.swift */,
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */,
+				0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
 				0AB414162613626D009A8375 /* SponsorsView.swift in Sources */,
 				0AB4141126135EFB009A8375 /* SponsorModel.swift in Sources */,

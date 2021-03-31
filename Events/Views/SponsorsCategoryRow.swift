@@ -22,7 +22,10 @@ struct SponsorsCategoryRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top ) {
                     ForEach(items) { sponsor in
-                        SponsorCategoryItem(sponsor: sponsor)
+                        NavigationLink(destination: SponsorDetails(sponsor: sponsor)) {
+                            SponsorCategoryItem(sponsor: sponsor)
+                        }
+                        
                     }
                     .padding(.leading)
                 }
