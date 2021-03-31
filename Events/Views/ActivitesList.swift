@@ -51,7 +51,7 @@ struct ActivitesList: View {
                     .navigationTitle("Activities")
                 }
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

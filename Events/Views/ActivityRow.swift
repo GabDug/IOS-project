@@ -47,13 +47,10 @@ struct smallcardView: View {
         return formatter
     }()
     
-    //var tagsArray = [String]();
-    //tagsArray.append(p.fields.type);
     init(p:Activity, namespace: Namespace.ID) {
         self.p = p;
         self.namespace = namespace;
         self.tagsArray = [p.fields.type]
-        //tagsArray.append(p.fields.type)
     }
     
     var body: some View {
