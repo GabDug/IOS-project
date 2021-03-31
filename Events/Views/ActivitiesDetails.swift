@@ -54,15 +54,17 @@ struct ActivitiesDetails: View {
                 
                 Map(coordinateRegion: $region, annotationItems: annotations) {
                     MapPin(coordinate: $0)
-                }
-                    .frame(width: 400, height: 300)
+                }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 400, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+                
+                    
             }
             .padding()
         }
         .navigationTitle(activity.fields.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
-            LocationUtils.coordinates(forAddress: "TODO: Replace me pls", completion: {
+            LocationUtils.coordinates(forAddress: "59 Rue Marcel Grosmenil 94800 Villejuif", completion: {
                 (location) in
                 guard let location = location else {
                     // Handle error here.
