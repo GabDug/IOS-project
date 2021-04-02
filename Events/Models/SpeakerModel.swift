@@ -26,7 +26,7 @@ struct SpeakerFields: Hashable, Codable {
     var role: String
     
     var type: String
-    var status: String
+    var status: String?
     
     var company: [String]?
     var speakingAt: [String]?

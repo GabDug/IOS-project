@@ -34,6 +34,7 @@
 		EB09F59B261463C900934F71 /* speaker.json in Resources */ = {isa = PBXBuildFile; fileRef = EB09F59A261463C900934F71 /* speaker.json */; };
 		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
 		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
+		EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B0B9261612070089F942 /* SpeakerRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		EB09F59A261463C900934F71 /* speaker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = speaker.json; path = ../../../../Downloads/speaker.json; sourceTree = "<group>"; };
 		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
+		EB83B0B9261612070089F942 /* SpeakerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				0A6A9F892614658E004178AB /* BackgroundView.swift */,
 				EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */,
 				EB09F5A4261471D200934F71 /* SpeakerListItem.swift */,
+				EB83B0B9261612070089F942 /* SpeakerRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
 				0AB414162613626D009A8375 /* SponsorsView.swift in Sources */,
+				EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */,
 				0AB4141126135EFB009A8375 /* SponsorModel.swift in Sources */,
 				0ADA0C4626131DC0007383DB /* ContentView.swift in Sources */,
 				0AAA52482613230200C33AA3 /* ActivityRow.swift in Sources */,

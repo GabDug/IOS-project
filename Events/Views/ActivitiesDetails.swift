@@ -52,6 +52,20 @@ struct ActivitiesDetails: View {
                 Text("Ending \(activity.fields.endDate , formatter: Self.taskDateFormat)")
                 
                 Divider()
+
+if (activity.fields.speakersId != nil) {
+                    let sp = activity.fields.speakersId!
+                    
+                    // FIXME: speakers est vide ça rend fou
+                    let filteredSpeakers = speakers.filter { speaker in
+                        sp.contains(where: { $0 == speaker.id } ); }
+                    
+                    SpeakerRow(
+                        speakers: filteredSpeakers
+                    )
+                } else {
+                    Text("No speakers registered for this activity.")
+                }
                 
                 Map(coordinateRegion: $region, annotationItems: annotations) {
                     MapPin(coordinate: $0)
@@ -84,6 +98,6 @@ struct ActivitiesDetails: View {
 
 struct ActivitiesDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesDetails(activity: activities[0])
+        ActivitiesDetails(activity: activities[1])
     }
 }
