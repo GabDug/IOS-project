@@ -11,6 +11,7 @@ extension CLLocationCoordinate2D: Identifiable {
 
 struct ActivitiesDetails: View {
     var activity: Activity
+    @State private var location: Location? = nil
     
     init(activity: Activity) {
         self.activity = activity;
@@ -30,11 +31,11 @@ struct ActivitiesDetails: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text(activity.fields.name)
+                Text(activity.fields.name )
                     .font(.title)
                 
                 HStack {
-                    Text(activity.fields.type)
+                    Text(activity.fields.type )
                 }
                 .font(.subheadline)
                 .foregroundColor(.secondary)
@@ -47,35 +48,36 @@ struct ActivitiesDetails: View {
                 
                 Divider()
                 
-                Text("Starting \(activity.fields.startDate, formatter: Self.taskDateFormat)")
-                Text("Ending \(activity.fields.endDate, formatter: Self.taskDateFormat)")
+                Text("Starting \(activity.fields.startDate , formatter: Self.taskDateFormat)")
+                Text("Ending \(activity.fields.endDate , formatter: Self.taskDateFormat)")
                 
                 Divider()
                 
                 Map(coordinateRegion: $region, annotationItems: annotations) {
                     MapPin(coordinate: $0)
                 }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 400, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
-                
-                    
             }
             .padding()
         }
         .navigationTitle(activity.fields.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
-            LocationUtils.coordinates(forAddress: "59 Rue Marcel Grosmenil 94800 Villejuif", completion: {
-                (location) in
-                guard let location = location else {
-                    // Handle error here.
-                    print("Error smth")
-                    return
-                }
+            ApiService.call(Location.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Event%20locations/\(activity.fields.locationId?[0] ?? "")") { (data) in
+                location = data
                 
-                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-                annotations.removeAll()
-                annotations.append(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
-            })
+                LocationUtils.coordinates(forAddress: location?.fields.buildingLocation ?? "", completion: {
+                    (location) in
+                    guard let location = location else {
+                        // Handle error here.
+                        print("Error smth")
+                        return
+                    }
+                    
+                    region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                    annotations.removeAll()
+                    annotations.append(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                })
+            }
         })
     }
 }
