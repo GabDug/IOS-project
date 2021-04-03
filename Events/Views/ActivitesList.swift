@@ -19,6 +19,10 @@ struct ActivitesList: View {
     @State var small = true
     @Namespace var namespace
     
+    #if !DEBUG
+    @State private var activities: Array<Activity> = []
+    #endif
+    
     var body: some View {
         NavigationView {
             HStack {
@@ -39,6 +43,11 @@ struct ActivitesList: View {
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: {
+            ApiService.call(Root.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Schedule") { (data) in
+                activities = data?.activities ?? []
+            }
+        })
     }
 }
 
