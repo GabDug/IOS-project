@@ -28,6 +28,11 @@ struct SponsorsView: View {
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: {
+            ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") { (data) in
+                sponsors = data?.sponsors ?? []
+            }
+        })
     }
 }
 
