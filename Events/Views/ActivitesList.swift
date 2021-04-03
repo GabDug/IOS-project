@@ -19,7 +19,9 @@ struct ActivitesList: View {
     @State var small = true
     @Namespace var namespace
     
+    #if !DEBUG
     @State private var activities: Array<Activity> = []
+    #endif
     
     var body: some View {
         NavigationView {

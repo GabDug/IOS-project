@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SponsorsView: View {
+    #if !DEBUG
+    @State private var sponsors: Array<Sponsor> = []
+    #endif
+    
     var body: some View {
         NavigationView {
             HStack {
