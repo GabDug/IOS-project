@@ -28,6 +28,8 @@
 		0ADA0C5626131DC1007383DB /* EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C5526131DC1007383DB /* EventsTests.swift */; };
 		0ADA0C6126131DC1007383DB /* EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C6026131DC1007383DB /* EventsUITests.swift */; };
 		C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86272DA2614553E00C91EF1 /* LocationUtils.swift */; };
+		C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862730926147CCB00C91EF1 /* ApiService.swift */; };
+		C86C112A26190A130077AF69 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86C112926190A130077AF69 /* LocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		0ADA0C6026131DC1007383DB /* EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUITests.swift; sourceTree = "<group>"; };
 		0ADA0C6226131DC1007383DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C86272DA2614553E00C91EF1 /* LocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtils.swift; sourceTree = "<group>"; };
+		C862730926147CCB00C91EF1 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		C86C112926190A130077AF69 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				0AAA522826131F7600C33AA3 /* ActivityModel.swift */,
 				0AB4141026135EFB009A8375 /* SponsorModel.swift */,
 				0AAA52352613223900C33AA3 /* ModelData.swift */,
+				C86C112926190A130077AF69 /* LocationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		0ADA0C4226131DC0007383DB /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				C862730826147CA600C91EF1 /* Services */,
 				C86272D92614552600C91EF1 /* Utils */,
 				0A55E68B2613ACDA0063D607 /* Colors.xcassets */,
 				0AB4140126135CA7009A8375 /* Events.entitlements */,
@@ -213,6 +219,14 @@
 				C86272DA2614553E00C91EF1 /* LocationUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C862730826147CA600C91EF1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C862730926147CCB00C91EF1 /* ApiService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,11 +369,13 @@
 				0ADA0C4626131DC0007383DB /* ContentView.swift in Sources */,
 				0AAA52482613230200C33AA3 /* ActivityRow.swift in Sources */,
 				050BAF5E2613712100020AC2 /* SponsorsCategoryRow.swift in Sources */,
+				C86C112A26190A130077AF69 /* LocationModel.swift in Sources */,
 				0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */,
 				050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */,
 				0AAA52362613223900C33AA3 /* ModelData.swift in Sources */,
 				0ADA0C4426131DC0007383DB /* EventsApp.swift in Sources */,
 				0AAA522926131F7600C33AA3 /* ActivityModel.swift in Sources */,
+				C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */,
 				0AAA52402613229B00C33AA3 /* ActivitiesDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
