@@ -26,7 +26,7 @@ struct SponsorCategoryItem: View {
 struct SponsorCategoryItem_Previews: PreviewProvider {
     static var previews: some View {
         SponsorCategoryItem(
-            sponsor: sponsors[1]
+            sponsor: localSponsors[1]
         )
     }
 }

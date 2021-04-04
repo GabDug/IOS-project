@@ -24,7 +24,7 @@ struct SpeakerListItem: View {
 struct SpeakerListItem_Previews: PreviewProvider {
     static var previews: some View {
         SpeakerListItem(
-            speaker: speakers[0]
+            speaker: localSpeakers[0]
         )
     }
 }

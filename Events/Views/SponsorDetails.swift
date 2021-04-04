@@ -53,6 +53,6 @@ struct SponsorDetails: View {
 
 struct SponsorDetails_Previews: PreviewProvider {
     static var previews: some View {
-        SponsorDetails(sponsor: sponsors[1])
+        SponsorDetails(sponsor: localSponsors[1])
     }
 }

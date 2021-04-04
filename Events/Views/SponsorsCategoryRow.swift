@@ -40,7 +40,7 @@ struct SponsorsCategoryRow_Previews:
     static var previews: some View {
         SponsorsCategoryRow(
             categoryName: "Pledged",
-            items: sponsors
+            items: localSponsors
         )
         .previewLayout(.fixed(width: 400, height: 300))
     }

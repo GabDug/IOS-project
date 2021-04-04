@@ -11,14 +11,14 @@ struct ContentView: View {
     var body: some View {
         TabView{
             
-            ActivitesList()
+            ActivitesList(activities: nil)
                 .padding(.all, 0.0)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Schedule")
                     
                 }
-            SponsorsView()
+            SponsorsView(sponsors: nil)
                 .tabItem {
                     Image(systemName: "rosette")
                     Text("Sponsors")

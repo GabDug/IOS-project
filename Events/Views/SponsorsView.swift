@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct SponsorsView: View {
-    #if !DEBUG
     @State private var sponsors: Array<Sponsor> = []
-    #endif
+    
+    init(sponsors: Array<Sponsor>?) {
+        if (sponsors != nil) {
+            self.sponsors = sponsors!
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -38,6 +42,6 @@ struct SponsorsView: View {
 
 struct SponsorsView_Previews: PreviewProvider {
     static var previews: some View {
-        SponsorsView()
+        SponsorsView(sponsors: localSponsors)
     }
 }

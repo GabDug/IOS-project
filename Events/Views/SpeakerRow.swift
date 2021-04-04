@@ -31,6 +31,6 @@ struct SpeakerRow: View {
 
 struct SpeakerRow_Previews: PreviewProvider {
     static var previews: some View {
-        SpeakerRow(speakers: speakers)
+        SpeakerRow(speakers: localSpeakers)
     }
 }

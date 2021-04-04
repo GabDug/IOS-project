@@ -110,6 +110,6 @@ struct ActivitiesDetails: View {
 
 struct ActivitiesDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesDetails(activity: activities[1])
+        ActivitiesDetails(activity: localActivities[1])
     }
 }

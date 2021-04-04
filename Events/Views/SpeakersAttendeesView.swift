@@ -23,6 +23,6 @@ struct SpeakersAttendeesView: View {
 
 struct SpeakersAttendeesView_Previews: PreviewProvider {
     static var previews: some View {
-        SpeakersAttendeesView(speakers: speakers)
+        SpeakersAttendeesView(speakers: localSpeakers)
     }
 }

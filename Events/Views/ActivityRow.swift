@@ -25,9 +25,9 @@ struct ActivitiesRow: View {
 struct ActivitesRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ActivitiesRow(activity: activities[0])
+            ActivitiesRow(activity: localActivities[0])
                 .preferredColorScheme(.light)
-            ActivitiesRow(activity: activities[1])
+            ActivitiesRow(activity: localActivities[1])
         }
         .previewLayout(.fixed(width: 400, height: 130))
     }

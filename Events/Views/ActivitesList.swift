@@ -19,9 +19,13 @@ struct ActivitesList: View {
     @State var small = true
     @Namespace var namespace
     
-    #if !DEBUG
     @State private var activities: Array<Activity> = []
-    #endif
+    
+    init(activities: Array<Activity>?) {
+        if (activities != nil) {
+            self.activities = activities!
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -54,7 +58,7 @@ struct ActivitesList: View {
 struct ActivitesList_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["iPhone SE (2nd generation)", "iPhone XS Max"], id: \.self) { deviceName in
-            ActivitesList()
+            ActivitesList(activities: localActivities)
                 .previewDevice(PreviewDevice(rawValue: deviceName))
                 .previewDisplayName(deviceName)
         }
