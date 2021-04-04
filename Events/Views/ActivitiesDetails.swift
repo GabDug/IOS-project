@@ -12,6 +12,7 @@ extension CLLocationCoordinate2D: Identifiable {
 struct ActivitiesDetails: View {
     var activity: Activity
     @State private var location: Location? = nil
+    @State private var speakers: Array<Speaker> = []
     
     init(activity: Activity) {
         self.activity = activity;
@@ -27,44 +28,44 @@ struct ActivitiesDetails: View {
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     @State private var annotations: Array<CLLocationCoordinate2D> = []
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text(activity.fields.name )
-                    .font(.title)
-                
-                HStack {
-                    Text(activity.fields.type )
+                Group {
+                    Text(activity.fields.name )
+                        .font(.title)
+                    
+                    HStack {
+                        Text(activity.fields.type )
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
                 
                 Divider()
                 
-                Text("About this activity")
-                    .font(.title2)
-                Text(activity.fields.description ?? "No description for this event.").font(.body).fixedSize(horizontal: false, vertical: true)
+                Group {
+                    Text("About this activity")
+                        .font(.title2)
+                    Text(activity.fields.description ?? "No description for this event.").font(.body).fixedSize(horizontal: false, vertical: true)
+                }
                 
                 Divider()
                 
-                Text("Starting \(activity.fields.startDate , formatter: Self.taskDateFormat)")
-                Text("Ending \(activity.fields.endDate , formatter: Self.taskDateFormat)")
+                Group {
+                    Text("Starting \(activity.fields.startDate , formatter: Self.taskDateFormat)")
+                    Text("Ending \(activity.fields.endDate , formatter: Self.taskDateFormat)")
+                }
                 
                 Divider()
-
-if (activity.fields.speakersId != nil) {
-                    let sp = activity.fields.speakersId!
-                    
-                    // FIXME: speakers est vide ça rend fou
-                    let filteredSpeakers = speakers.filter { speaker in
-                        sp.contains(where: { $0 == speaker.id } ); }
-                    
-                    SpeakerRow(
-                        speakers: filteredSpeakers
-                    )
-                } else {
-                    Text("No speakers registered for this activity.")
+                
+                Group {
+                    if (speakers.count > 0) {
+                        SpeakerRow(speakers: speakers)
+                    } else {
+                        Text("No speakers registered for this activity.")
+                    }
                 }
                 
                 Map(coordinateRegion: $region, annotationItems: annotations) {
@@ -76,6 +77,17 @@ if (activity.fields.speakersId != nil) {
         .navigationTitle(activity.fields.name)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
+            if (activity.fields.speakersId != nil) {
+                activity.fields.speakersId?.forEach({ (id) in
+                    ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)") {
+                        (data) in
+                        if (data != nil) {
+                            speakers.append(data!)
+                        }
+                    }
+                })
+            }
+            
             ApiService.call(Location.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Event%20locations/\(activity.fields.locationId?[0] ?? "")") { (data) in
                 location = data
                 
