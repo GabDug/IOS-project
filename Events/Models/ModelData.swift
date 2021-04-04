@@ -2,13 +2,21 @@ import Foundation
 
 private var root: Root = load("activities.json")
 private var  rootSponsors: RootSponsors = load("sponsor.json")
+private var rootSpeakers: RootSpeaker = load("speaker.json")
 var activities: [Activity] = root.activities
 var sponsors: [Sponsor] = rootSponsors.sponsors
+var speakers: [Speaker] = rootSpeakers.speakers
 
 var sponsorCategories: [String: [Sponsor]] {
     Dictionary(
         grouping: sponsors,
         by: { $0.fields.status }
+    )
+}
+var speakerCategories: [String: [Speaker]] {
+    Dictionary(
+        grouping: speakers,
+        by: { $0.fields.type }
     )
 }
 

@@ -30,6 +30,11 @@
 		C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86272DA2614553E00C91EF1 /* LocationUtils.swift */; };
 		C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862730926147CCB00C91EF1 /* ApiService.swift */; };
 		C86C112A26190A130077AF69 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86C112926190A130077AF69 /* LocationModel.swift */; };
+		C87830402619F16B00629103 /* speaker.json in Resources */ = {isa = PBXBuildFile; fileRef = C878303F2619F16B00629103 /* speaker.json */; };
+		EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */; };
+		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
+		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
+		EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B0B9261612070089F942 /* SpeakerRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,11 @@
 		C86272DA2614553E00C91EF1 /* LocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtils.swift; sourceTree = "<group>"; };
 		C862730926147CCB00C91EF1 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C86C112926190A130077AF69 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		C878303F2619F16B00629103 /* speaker.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = speaker.json; sourceTree = "<group>"; };
+		EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersAttendeesView.swift; sourceTree = "<group>"; };
+		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
+		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
+		EB83B0B9261612070089F942 /* SpeakerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,15 +123,18 @@
 		0AAA522226131F0500C33AA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0ADA0C4526131DC0007383DB /* ContentView.swift */,
 				0AB414152613626D009A8375 /* SponsorsView.swift */,
 				0589331826146B1B00278B87 /* SponsorDetails.swift */,
 				0AAA523A2613227700C33AA3 /* ActivitesList.swift */,
+				0ADA0C4526131DC0007383DB /* ContentView.swift */,
 				0AAA52472613230200C33AA3 /* ActivityRow.swift */,
 				0AAA523F2613229B00C33AA3 /* ActivitiesDetails.swift */,
 				050BAF5D2613712100020AC2 /* SponsorsCategoryRow.swift */,
 				050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */,
 				0A6A9F892614658E004178AB /* BackgroundView.swift */,
+				EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */,
+				EB09F5A4261471D200934F71 /* SpeakerListItem.swift */,
+				EB83B0B9261612070089F942 /* SpeakerRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 				0AB4141026135EFB009A8375 /* SponsorModel.swift */,
 				0AAA52352613223900C33AA3 /* ModelData.swift */,
 				C86C112926190A130077AF69 /* LocationModel.swift */,
+				EB09F59F261465ED00934F71 /* SpeakerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +154,7 @@
 		0AB413FB261327E5009A8375 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C878303F2619F16B00629103 /* speaker.json */,
 				0AB4140826135E75009A8375 /* sponsor.json */,
 				0AB413FC261327F3009A8375 /* activities.json */,
 			);
@@ -334,6 +349,7 @@
 			files = (
 				0A55E68C2613ACDA0063D607 /* Colors.xcassets in Resources */,
 				0AB4140926135E75009A8375 /* sponsor.json in Resources */,
+				C87830402619F16B00629103 /* speaker.json in Resources */,
 				0ADA0C4B26131DC1007383DB /* Preview Assets.xcassets in Resources */,
 				0ADA0C4826131DC1007383DB /* Assets.xcassets in Resources */,
 				0AB413FD261327F3009A8375 /* activities.json in Resources */,
@@ -363,8 +379,11 @@
 			files = (
 				C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */,
 				0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */,
+				EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */,
+				EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
 				0AB414162613626D009A8375 /* SponsorsView.swift in Sources */,
+				EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */,
 				0AB4141126135EFB009A8375 /* SponsorModel.swift in Sources */,
 				0ADA0C4626131DC0007383DB /* ContentView.swift in Sources */,
 				0AAA52482613230200C33AA3 /* ActivityRow.swift in Sources */,
@@ -373,6 +392,7 @@
 				0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */,
 				050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */,
 				0AAA52362613223900C33AA3 /* ModelData.swift in Sources */,
+				EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */,
 				0ADA0C4426131DC0007383DB /* EventsApp.swift in Sources */,
 				0AAA522926131F7600C33AA3 /* ActivityModel.swift in Sources */,
 				C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */,
