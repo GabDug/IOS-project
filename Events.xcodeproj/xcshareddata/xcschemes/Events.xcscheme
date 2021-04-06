@@ -47,6 +47,11 @@
                BlueprintName = "EventsTests"
                ReferencedContainer = "container:Events.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "ServicesTests/testJSONLoadingError()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

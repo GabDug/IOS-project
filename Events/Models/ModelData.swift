@@ -7,18 +7,6 @@ var localActivities: [Activity] = root.activities
 var localSponsors: [Sponsor] = rootSponsors.sponsors
 var localSpeakers: [Speaker] = rootSpeakers.speakers
 
-var sponsorCategories: [String: [Sponsor]] {
-    Dictionary(
-        grouping: localSponsors,
-        by: { $0.fields.status }
-    )
-}
-var speakerCategories: [String: [Speaker]] {
-    Dictionary(
-        grouping: localSpeakers,
-        by: { $0.fields.type }
-    )
-}
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
