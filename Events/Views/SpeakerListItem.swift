@@ -13,7 +13,7 @@ struct SpeakerListItem: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                .fill(Color.purple) // TODO: get a random color from id
+                .fill(ColorUtils.newColorFromId(userId: speaker.id)) 
                 .frame(width: 155, height: 155)
             
             Text(speaker.fields.name)
