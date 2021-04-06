@@ -18,7 +18,7 @@ struct ContentView: View {
                     Text("Schedule")
                     
                 }
-            SponsorsView(sponsors: nil)
+            SponsorsView()
                 .tabItem {
                     Image(systemName: "rosette")
                     Text("Sponsors")
