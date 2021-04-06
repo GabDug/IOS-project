@@ -63,7 +63,9 @@ struct ActivitesList: View {
                             ForEach(
                                 activities.filter { activity in
                                     DateUtils.dayOnlyDateFromDate(from: activity.fields.startDate) == selectedDate
-                                },
+                                }.sorted(by: { (a, b) -> Bool in
+                                    return (b.fields.startDate.compare(a.fields.startDate) == .orderedDescending)
+                                }),
                                 id: \.self
                             ) { activity in
                                 NavigationLink(destination: ActivitiesDetails(activity: activity)) {
