@@ -32,6 +32,7 @@
 		C86C112A26190A130077AF69 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86C112926190A130077AF69 /* LocationModel.swift */; };
 		C87830402619F16B00629103 /* speaker.json in Resources */ = {isa = PBXBuildFile; fileRef = C878303F2619F16B00629103 /* speaker.json */; };
 		C8783052261CAFD700629103 /* ApiErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8783051261CAFD700629103 /* ApiErrorEnum.swift */; };
+		C8783072261CBD9B00629103 /* OverlaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8783071261CBD9B00629103 /* OverlaysView.swift */; };
 		EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */; };
 		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
 		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
@@ -93,6 +94,7 @@
 		C86C112926190A130077AF69 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		C878303F2619F16B00629103 /* speaker.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = speaker.json; sourceTree = "<group>"; };
 		C8783051261CAFD700629103 /* ApiErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorEnum.swift; sourceTree = "<group>"; };
+		C8783071261CBD9B00629103 /* OverlaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaysView.swift; sourceTree = "<group>"; };
 		EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersAttendeesView.swift; sourceTree = "<group>"; };
 		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */,
 				EB09F5A4261471D200934F71 /* SpeakerListItem.swift */,
 				EB83B0B9261612070089F942 /* SpeakerRow.swift */,
+				C8783071261CBD9B00629103 /* OverlaysView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */,
 				EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */,
 				EBF8C2C9261C75050067535F /* NameUtils.swift in Sources */,
+				C8783072261CBD9B00629103 /* OverlaysView.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
 				0AB414162613626D009A8375 /* SponsorsView.swift in Sources */,
 				EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */,
