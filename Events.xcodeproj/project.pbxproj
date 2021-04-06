@@ -135,21 +135,21 @@
 		0AAA522226131F0500C33AA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0AB414152613626D009A8375 /* SponsorsView.swift */,
-				0589331826146B1B00278B87 /* SponsorDetails.swift */,
 				0AAA523A2613227700C33AA3 /* ActivitesList.swift */,
-				0ADA0C4526131DC0007383DB /* ContentView.swift */,
-				0AAA52472613230200C33AA3 /* ActivityRow.swift */,
 				0AAA523F2613229B00C33AA3 /* ActivitiesDetails.swift */,
-				050BAF5D2613712100020AC2 /* SponsorsCategoryRow.swift */,
-				050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */,
+				0AAA52472613230200C33AA3 /* ActivityRow.swift */,
+				EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */,
 				0A6A9F892614658E004178AB /* BackgroundView.swift */,
-				EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */,
+				0ADA0C4526131DC0007383DB /* ContentView.swift */,
+				C8783071261CBD9B00629103 /* OverlaysView.swift */,
+				EB3444ED261CBC6C009D3441 /* PersonView.swift */,
 				EB09F5A4261471D200934F71 /* SpeakerListItem.swift */,
 				EB83B0B9261612070089F942 /* SpeakerRow.swift */,
-				C8783071261CBD9B00629103 /* OverlaysView.swift */,
-				EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */,
-				EB3444ED261CBC6C009D3441 /* PersonView.swift */,
+				EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */,
+				050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */,
+				0589331826146B1B00278B87 /* SponsorDetails.swift */,
+				050BAF5D2613712100020AC2 /* SponsorsCategoryRow.swift */,
+				0AB414152613626D009A8375 /* SponsorsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,10 +158,10 @@
 			isa = PBXGroup;
 			children = (
 				0AAA522826131F7600C33AA3 /* ActivityModel.swift */,
-				0AB4141026135EFB009A8375 /* SponsorModel.swift */,
-				0AAA52352613223900C33AA3 /* ModelData.swift */,
 				C86C112926190A130077AF69 /* LocationModel.swift */,
+				0AAA52352613223900C33AA3 /* ModelData.swift */,
 				EB09F59F261465ED00934F71 /* SpeakerModel.swift */,
+				0AB4141026135EFB009A8375 /* SponsorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,18 +202,18 @@
 		0ADA0C4226131DC0007383DB /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				0ADA0C4726131DC1007383DB /* Assets.xcassets */,
+				0A55E68B2613ACDA0063D607 /* Colors.xcassets */,
 				C8783050261CAFC400629103 /* Enums */,
+				0AB4140126135CA7009A8375 /* Events.entitlements */,
+				0ADA0C4326131DC0007383DB /* EventsApp.swift */,
+				0ADA0C4C26131DC1007383DB /* Info.plist */,
+				0AAA522726131F3000C33AA3 /* Models */,
+				0ADA0C4926131DC1007383DB /* Preview Content */,
+				0AB413FB261327E5009A8375 /* Resources */,
 				C862730826147CA600C91EF1 /* Services */,
 				C86272D92614552600C91EF1 /* Utils */,
-				0A55E68B2613ACDA0063D607 /* Colors.xcassets */,
-				0AB4140126135CA7009A8375 /* Events.entitlements */,
-				0AB413FB261327E5009A8375 /* Resources */,
-				0AAA522726131F3000C33AA3 /* Models */,
-				0ADA0C4326131DC0007383DB /* EventsApp.swift */,
 				0AAA522226131F0500C33AA3 /* Views */,
-				0ADA0C4726131DC1007383DB /* Assets.xcassets */,
-				0ADA0C4C26131DC1007383DB /* Info.plist */,
-				0ADA0C4926131DC1007383DB /* Preview Content */,
 			);
 			path = Events;
 			sourceTree = "<group>";
