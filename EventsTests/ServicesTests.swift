@@ -12,7 +12,9 @@ import XCTest
 class ServicesTests: XCTestCase {
 
     func testJSONLoadingError() throws {
-        XCTAssertThrowsError(Events.load("test.json") as [Sponsor])
+        expectFatalError(expectedMessage: "Couldn't find test.json in main bundle.") {
+            var _: Root = ModelData.load("test.json")
+        }
     }
 
     func testAPIWithWrongURL() throws {

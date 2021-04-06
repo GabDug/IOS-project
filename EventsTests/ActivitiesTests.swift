@@ -12,7 +12,7 @@ import XCTest
 class ActivitiesTests: XCTestCase {
 
     func testLoadingFromJSON() throws {
-        let root: Root = Events.load("activities.json")
+        let root: Root = ModelData.load("activities.json")
         let activities = root.activities
         
         XCTAssertNotNil(activities)

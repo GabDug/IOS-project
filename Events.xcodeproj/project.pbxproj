@@ -36,6 +36,8 @@
 		C87830402619F16B00629103 /* speaker.json in Resources */ = {isa = PBXBuildFile; fileRef = C878303F2619F16B00629103 /* speaker.json */; };
 		C8783052261CAFD700629103 /* ApiErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8783051261CAFD700629103 /* ApiErrorEnum.swift */; };
 		C8783072261CBD9B00629103 /* OverlaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8783071261CBD9B00629103 /* OverlaysView.swift */; };
+		C878308B261CE8D900629103 /* FatalErrorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878308A261CE8D900629103 /* FatalErrorUtils.swift */; };
+		C87830A2261CEBC900629103 /* CustomTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87830A1261CEBC900629103 /* CustomTestCase.swift */; };
 		EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */; };
 		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
 		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
@@ -103,6 +105,8 @@
 		C878303F2619F16B00629103 /* speaker.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = speaker.json; sourceTree = "<group>"; };
 		C8783051261CAFD700629103 /* ApiErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorEnum.swift; sourceTree = "<group>"; };
 		C8783071261CBD9B00629103 /* OverlaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaysView.swift; sourceTree = "<group>"; };
+		C878308A261CE8D900629103 /* FatalErrorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalErrorUtils.swift; sourceTree = "<group>"; };
+		C87830A1261CEBC900629103 /* CustomTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTestCase.swift; sourceTree = "<group>"; };
 		EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersAttendeesView.swift; sourceTree = "<group>"; };
 		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				0514DDED261CC3D6008677C1 /* SponsorsTests.swift */,
 				059690BB261CA1CC00B13AE2 /* ActivitiesTests.swift */,
 				0ADA0C5726131DC1007383DB /* Info.plist */,
+				C87830A1261CEBC900629103 /* CustomTestCase.swift */,
 			);
 			path = EventsTests;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				C86272DA2614553E00C91EF1 /* LocationUtils.swift */,
 				EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */,
 				EBF8C2C8261C75050067535F /* NameUtils.swift */,
+				C878308A261CE8D900629103 /* FatalErrorUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 				0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */,
 				050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */,
 				0AAA52362613223900C33AA3 /* ModelData.swift in Sources */,
+				C878308B261CE8D900629103 /* FatalErrorUtils.swift in Sources */,
 				EBF8C2BE261C6DDE0067535F /* ColorUtils.swift in Sources */,
 				EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */,
 				0ADA0C4426131DC0007383DB /* EventsApp.swift in Sources */,
@@ -446,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0514DDEE261CC3D6008677C1 /* SponsorsTests.swift in Sources */,
+				C87830A2261CEBC900629103 /* CustomTestCase.swift in Sources */,
 				0514DE2F261CDAAC008677C1 /* ServicesTests.swift in Sources */,
 				059690BC261CA1CC00B13AE2 /* ActivitiesTests.swift in Sources */,
 				0514DE0B261CCE62008677C1 /* UtilsTests.swift in Sources */,

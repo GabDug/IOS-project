@@ -12,7 +12,7 @@ import XCTest
 class SponsorsTests: XCTestCase {
 
     func testLoadingFromJSON() throws {
-        let root: RootSponsors = Events.load("sponsor.json")
+        let root: RootSponsors = ModelData.load("sponsor.json")
         let sponsors = root.sponsors
         
         XCTAssertNotNil(sponsors)
