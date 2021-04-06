@@ -90,7 +90,7 @@ struct ActivitiesDetails: View {
                 activity.fields.speakersId?.forEach({ (id) in
                     ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)") {
                         (data) in
-                        if (data != nil) {
+                        if (data != nil && speakers.count == 0) {
                             speakers.append(data!)
                         }
                     } errorHandler: { (error) in
