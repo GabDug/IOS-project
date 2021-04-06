@@ -16,12 +16,16 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Schedule")
-                    
                 }
             SponsorsView()
                 .tabItem {
                     Image(systemName: "rosette")
                     Text("Sponsors")
+                }
+            AttendeesListView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Attendees")
                 }
         }
     }
