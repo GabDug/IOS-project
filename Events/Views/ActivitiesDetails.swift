@@ -10,6 +10,10 @@ extension CLLocationCoordinate2D: Identifiable {
 }
 
 struct ActivitiesDetails: View {
+    @State private var showOverlay = false
+    @State private var titleBanner = "Error"
+    @State private var messageBanner = ""
+    
     var activity: Activity
     @State private var location: Location? = nil
     @State private var speakers: Array<Speaker> = []
@@ -79,6 +83,8 @@ struct ActivitiesDetails: View {
         }
         .navigationTitle(activity.fields.name)
         .navigationBarTitleDisplayMode(.inline)
+        .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
+                 , show: $showOverlay)
         .onAppear(perform: {
             if (activity.fields.speakersId != nil) {
                 activity.fields.speakersId?.forEach({ (id) in
@@ -88,7 +94,23 @@ struct ActivitiesDetails: View {
                             speakers.append(data!)
                         }
                     } errorHandler: { (error) in
-                        // TODO: Do smth
+                        withAnimation { () -> Void in
+                            switch (error) {
+                            case .none:
+                                break
+                            case .some(.apiError(_, _)):
+                                self.messageBanner = "An issue occured when querying the API"
+                                break
+                            case .some(.httpError(_)):
+                                self.messageBanner = "We couldn't reach the API"
+                                break
+                            case .some(.parseError(_, _)):
+                                self.messageBanner = "An issue occured while parsing the data"
+                                break
+                            }
+                            
+                            self.showOverlay = true
+                        }
                     }
                 })
             }
@@ -99,8 +121,12 @@ struct ActivitiesDetails: View {
                 LocationUtils.coordinates(forAddress: location?.fields.buildingLocation ?? "", completion: {
                     (location) in
                     guard let location = location else {
-                        // Handle error here.
-                        print("Error smth")
+                        withAnimation { () -> Void in
+                            self.messageBanner = "Couldn't find the location of the event"
+                            
+                            self.showOverlay = true
+                        }
+                        
                         return
                     }
                     
@@ -112,7 +138,23 @@ struct ActivitiesDetails: View {
                     }
                 })
             } errorHandler: { (error) in
-                // TODO: Do smth
+                withAnimation { () -> Void in
+                    switch (error) {
+                    case .none:
+                        break
+                    case .some(.apiError(_, _)):
+                        self.messageBanner = "An issue occured when querying the API"
+                        break
+                    case .some(.httpError(_)):
+                        self.messageBanner = "We couldn't reach the API"
+                        break
+                    case .some(.parseError(_, _)):
+                        self.messageBanner = "An issue occured while parsing the data"
+                        break
+                    }
+                    
+                    self.showOverlay = true
+                }
             }
         })
     }

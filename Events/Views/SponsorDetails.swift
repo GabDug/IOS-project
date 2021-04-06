@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SponsorDetails: View {
+    @State private var showOverlay = false
+    @State private var titleBanner = "Error"
+    @State private var messageBanner = ""
+    
     var sponsor: Sponsor
     @State private var contact: [Speaker] = []
     
@@ -48,6 +52,8 @@ struct SponsorDetails: View {
         }
         .navigationTitle(sponsor.fields.name)
         .navigationBarTitleDisplayMode(.inline)
+        .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
+                 , show: $showOverlay)
         .onAppear(perform: {
             if (sponsor.fields.contactsId != nil) {
                 sponsor.fields.contactsId?.forEach { id in
@@ -59,7 +65,23 @@ struct SponsorDetails: View {
                             contact.append(data!)
                         }
                     } errorHandler: { (error) in
-                        // TODO: Do smth
+                        withAnimation { () -> Void in
+                            switch (error) {
+                            case .none:
+                                break
+                            case .some(.apiError(_, _)):
+                                self.messageBanner = "An issue occured when querying the API"
+                                break
+                            case .some(.httpError(_)):
+                                self.messageBanner = "We couldn't reach the API"
+                                break
+                            case .some(.parseError(_, _)):
+                                self.messageBanner = "An issue occured while parsing the data"
+                                break
+                            }
+                            
+                            self.showOverlay = true
+                        }
                     }
                 }
             }
