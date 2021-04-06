@@ -21,6 +21,8 @@ struct PersonView: View {
     
     
     var body: some View {
+        ZStack {
+            BackgroundView()
         ScrollView {
             VStack(alignment: .leading) {
                 Group {
@@ -78,7 +80,7 @@ struct PersonView: View {
                 }
             }
             .padding()
-        }
+        }}
         .navigationTitle(person.fields.name)
         .navigationBarTitleDisplayMode(.inline)
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)

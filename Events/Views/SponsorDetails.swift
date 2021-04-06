@@ -18,6 +18,8 @@ struct SponsorDetails: View {
     @State private var contact: [Speaker] = []
     
     var body: some View {
+        ZStack {
+            BackgroundView()
         ScrollView {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
@@ -51,7 +53,7 @@ struct SponsorDetails: View {
             }
             .padding()
             
-        }
+        }}
         .navigationTitle(sponsor.fields.name)
         .navigationBarTitleDisplayMode(.inline)
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)

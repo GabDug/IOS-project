@@ -37,6 +37,8 @@ struct ActivitiesDetails: View {
     @State private var annotations: Array<CLLocationCoordinate2D> = []
     
     var body: some View {
+        ZStack{
+                    BackgroundView()
         ScrollView {
             VStack(alignment: .leading) {
                 Group {
@@ -53,8 +55,6 @@ struct ActivitiesDetails: View {
                 Divider()
                 
                 Group {
-                    Text("About this activity")
-                        .font(.title2)
                     Text(activity.fields.description ?? "No description for this event.").font(.body).fixedSize(horizontal: false, vertical: true)
                 }
                 
@@ -82,7 +82,7 @@ struct ActivitiesDetails: View {
                 }
             }
             .padding()
-        }
+        }}
         .navigationTitle(activity.fields.name)
         .navigationBarTitleDisplayMode(.inline)
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)

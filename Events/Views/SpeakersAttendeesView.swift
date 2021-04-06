@@ -11,6 +11,8 @@ struct SpeakersAttendeesView: View {
     var speakers: [Speaker]
     
     var body: some View {
+        ZStack {
+            BackgroundView()
         ScrollView {
             HStack {
                 ForEach(speakers, id: \.self) { speaker in
@@ -18,7 +20,7 @@ struct SpeakersAttendeesView: View {
                 }
             }
         }
-    }
+        }}
 }
 
 struct SpeakersAttendeesView_Previews: PreviewProvider {
