@@ -21,7 +21,7 @@ class ApiService {
                   (200...299).contains(httpResponse.statusCode) else {
                 // API Error thrown
                 let httpCode: String = String((response as? HTTPURLResponse)?.statusCode ?? 0)
-                errorHandler(ApiError.apiError(httpCode))
+                errorHandler(ApiError.apiError(httpCode, String(bytes: data ?? Data(), encoding: .utf8) ?? ""))
                 return
             }
             
@@ -39,7 +39,7 @@ class ApiService {
                     completionHandler(decoded)
                 } catch {
                     // Decodable error
-                    errorHandler(ApiError.parseError(error))
+                    errorHandler(ApiError.parseError(error, String(bytes: data, encoding: .utf8) ?? ""))
                 }
             }
         })
