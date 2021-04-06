@@ -8,6 +8,10 @@
 import Foundation
 
 class NameUtils {
+    
+    /// Get initials from a given Name
+    /// - Parameter name: name to parse
+    /// - Returns: initials
     static func initialsFromName(name: String) -> String {
         
         var initials = ""

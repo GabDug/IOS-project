@@ -40,7 +40,6 @@ struct SponsorDetails: View {
                 
                 Divider()
                 
-                // TODO: transform contact ids into real contacts
                 Group {
                     if (contact.count > 0) {
                         SpeakerRow(speakers: contact)

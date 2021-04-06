@@ -18,7 +18,6 @@ struct LocationFields: Hashable, Codable {
     var description: String
     
     var spaceName: String
-    // TODO: var photos: Date
     
     var buildingLocation: String
     var scheduledEvents: Array<String>

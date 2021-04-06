@@ -12,6 +12,9 @@ import SwiftUI
 
 class ColorUtils {
     
+    /// Get a color based on the userId
+    /// - Parameter userId: userId used as a hash
+    /// - Returns: a Color based on the hash
     static func newColorFromId (userId: String) -> Color {
         
         // Generate unique HEX string from user ID
