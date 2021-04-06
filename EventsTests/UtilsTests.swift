@@ -33,10 +33,10 @@ class UtilsTests: XCTestCase {
     
     func testLocationFromAddress() throws {
         let expect = expectation(description: "Address converiton")
-        var coord: CLLocationCoordinate2D?
+        var coord: CLLocationCoordinate2D? = nil
         
         Events.LocationUtils.coordinates(forAddress: "64 rue Saint-Roch, Villejuif, France") { coordinate in
-            coord = coordinate ?? nil
+            coord = coordinate
             expect.fulfill()
         }
         

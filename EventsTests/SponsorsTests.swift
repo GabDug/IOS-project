@@ -19,13 +19,13 @@ class SponsorsTests: XCTestCase {
     }
     
     func testLoadingFromAPI() throws {
-        var sponsors: [Sponsor]?
+        var sponsors: [Sponsor]? = nil
         let expect = expectation(description: "API call")
         
         Events.ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") { (data) in
-            sponsors = data?.sponsors ?? nil
+            sponsors = data?.sponsors
             expect.fulfill()
-        }
+        } errorHandler: { _ in }
         
         waitForExpectations(timeout: 5, handler: nil)
         
@@ -35,7 +35,7 @@ class SponsorsTests: XCTestCase {
     func testPerformanceForAPILoad() throws {
         // This is an example of a performance test case.
         self.measure {
-            Events.ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") {_ in }
+            Events.ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") {_ in } errorHandler: { _ in }
         }
     }
 
