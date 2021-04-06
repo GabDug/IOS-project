@@ -82,7 +82,7 @@ struct PersonView: View {
                 if (data != nil) {
                     company = data!
                 }
-            }
+            } errorHandler: {_ in }
         })
     }
 }

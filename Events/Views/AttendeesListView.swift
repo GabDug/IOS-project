@@ -34,7 +34,7 @@ struct AttendeesListView: View {
         .onAppear(perform: {
             ApiService.call(RootSpeaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees?filterByFormula=SEARCH(%22Attendee%22%2CType)") { data in
                 attendees = data?.speakers ?? []
-            }
+            } errorHandler: {_ in }
         })
     }
 }
