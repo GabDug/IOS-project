@@ -35,6 +35,8 @@
 		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
 		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
 		EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B0B9261612070089F942 /* SpeakerRow.swift */; };
+		EBF8C2BE261C6DDE0067535F /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */; };
+		EBF8C2C9261C75050067535F /* NameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8C2C8261C75050067535F /* NameUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
 		EB83B0B9261612070089F942 /* SpeakerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerRow.swift; sourceTree = "<group>"; };
+		EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		EBF8C2C8261C75050067535F /* NameUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				C86272DA2614553E00C91EF1 /* LocationUtils.swift */,
+				EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */,
+				EBF8C2C8261C75050067535F /* NameUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 				0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */,
 				EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */,
 				EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */,
+				EBF8C2C9261C75050067535F /* NameUtils.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
 				0AB414162613626D009A8375 /* SponsorsView.swift in Sources */,
 				EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */,
@@ -392,6 +399,7 @@
 				0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */,
 				050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */,
 				0AAA52362613223900C33AA3 /* ModelData.swift in Sources */,
+				EBF8C2BE261C6DDE0067535F /* ColorUtils.swift in Sources */,
 				EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */,
 				0ADA0C4426131DC0007383DB /* EventsApp.swift in Sources */,
 				0AAA522926131F7600C33AA3 /* ActivityModel.swift in Sources */,
