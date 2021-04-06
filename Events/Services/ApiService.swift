@@ -5,7 +5,7 @@ class ApiService {
     
     // Need to pass the type as an argument because type serialization
     static func call<T: Decodable>(_ returning: T.Type, url: String, completionHandler: @escaping (T?) -> Void, errorHandler: @escaping (ApiError?) -> Void) {
-        let url = URL(string: url) // TODO: Remove the optional URL
+        let url = URL(string: url)
         
         var request = URLRequest(url: url!)
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
