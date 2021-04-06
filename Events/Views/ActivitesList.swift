@@ -3,6 +3,8 @@
  */
 
 import SwiftUI
+import Foundation
+
 extension Color {
     static let lightPink = Color(red: 236 / 255, green: 188 / 255, blue: 180 / 255)
     static let lightGray = Color(red: 224 / 255, green: 229 / 255, blue: 236 / 255)
@@ -26,6 +28,11 @@ struct ActivitesList: View {
     
     @State private var activities: Array<Activity> = []
     
+    @State private var availableDates: [Date] = []
+    @State private var selectedDate: Date = Date()
+    
+    
+    
     init(activities: Array<Activity>?) {
         if (activities != nil) {
             self.activities = activities!
@@ -40,7 +47,25 @@ struct ActivitesList: View {
                     // Actual Scrollview
                     ScrollView {
                         VStack {
-                            ForEach(activities, id: \.self) { activity in
+                            HStack {
+                                Text("Selected date:")
+                                    .font(.title2)
+                                
+                                Picker(DateUtils.formattedStringFromDate(from: selectedDate), selection: $selectedDate) {
+                                    ForEach(availableDates, id: \.self) {
+                                        Text(DateUtils.formattedStringFromDate(from: $0))
+                                    }
+                                }
+                                .pickerStyle(MenuPickerStyle())
+                                .font(.title2)
+                            }
+                            
+                            ForEach(
+                                activities.filter { activity in
+                                    DateUtils.dayOnlyDateFromDate(from: activity.fields.startDate) == selectedDate
+                                },
+                                id: \.self
+                            ) { activity in
                                 NavigationLink(destination: ActivitiesDetails(activity: activity)) {
                                     ActivitiesRow(activity: activity)
                                 }
@@ -62,6 +87,19 @@ struct ActivitesList: View {
             ApiService.call(Root.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Schedule") { (data) in
                 isLoaded = true
                 activities = data?.activities ?? []
+                
+                if (activities.count > 0) {
+                    activities.forEach { activity in
+                        let activityDate = DateUtils.dayOnlyDateFromDate(from: activity.fields.startDate)
+                        
+                        if (!availableDates.contains(activityDate)) {
+                            availableDates.append(activityDate)
+                        }
+                    }
+                    
+                    availableDates = DateUtils.sortedDateArray(from: availableDates)
+                    selectedDate = availableDates[0]
+                }
             } errorHandler: { (error) in
                 withAnimation { () -> Void in
                     switch (error) {
