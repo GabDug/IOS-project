@@ -10,6 +10,8 @@ extension CLLocationCoordinate2D: Identifiable {
 }
 
 struct ActivitiesDetails: View {
+    @State private var isLoaded = false
+    
     @State private var showOverlay = false
     @State private var titleBanner = "Error"
     @State private var messageBanner = ""
@@ -86,11 +88,17 @@ struct ActivitiesDetails: View {
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
+            if (isLoaded) {
+                return
+            }
+            
             if (activity.fields.speakersId != nil) {
                 activity.fields.speakersId?.forEach({ (id) in
                     ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)") {
                         (data) in
-                        if (data != nil && speakers.count == 0) {
+                        isLoaded = true;
+                        
+                        if (data != nil) {
                             speakers.append(data!)
                         }
                     } errorHandler: { (error) in
@@ -116,6 +124,7 @@ struct ActivitiesDetails: View {
             }
             
             ApiService.call(Location.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Event%20locations/\(activity.fields.locationId?[0] ?? "")") { (data) in
+                isLoaded = true
                 location = data
                 
                 LocationUtils.coordinates(forAddress: location?.fields.buildingLocation ?? "", completion: {

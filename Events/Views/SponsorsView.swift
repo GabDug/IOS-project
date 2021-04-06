@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SponsorsView: View {
+    @State private var isLoaded = false
+    
     @State private var showOverlay = false
     @State private var titleBanner = "Error"
     @State private var messageBanner = ""
@@ -35,7 +37,12 @@ struct SponsorsView: View {
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
+            if (isLoaded) {
+                return
+            }
+            
             ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") { (data) in
+                isLoaded = true
                 sponsors = data?.sponsors ?? []
                 if (sponsors.count > 0) {
                     categorizedSponsors = Dictionary(

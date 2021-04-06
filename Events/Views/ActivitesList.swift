@@ -15,6 +15,7 @@ extension Color {
     static let OrangeColor = Color(red: 240 / 255, green: 146 / 255, blue: 171 / 255)
 }
 struct ActivitesList: View {
+    @State private var isLoaded = false
     
     @State var small = true
     @Namespace var namespace
@@ -54,7 +55,12 @@ struct ActivitesList: View {
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
+            if (isLoaded) {
+                return
+            }
+            
             ApiService.call(Root.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Schedule") { (data) in
+                isLoaded = true
                 activities = data?.activities ?? []
             } errorHandler: { (error) in
                 withAnimation { () -> Void in
