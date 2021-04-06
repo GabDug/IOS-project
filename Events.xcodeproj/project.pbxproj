@@ -195,8 +195,8 @@
 		0ADA0C3726131DC0007383DB = {
 			isa = PBXGroup;
 			children = (
-				0A3EF8182614684300E8C4F8 /* .gitattributes */,
 				050C7273261452170002543B /* .gitignore */,
+				0A3EF8182614684300E8C4F8 /* .gitattributes */,
 				0A55E6932613C1D40063D607 /* README.md */,
 				0ADA0C4226131DC0007383DB /* Events */,
 				0ADA0C5426131DC1007383DB /* EventsTests */,
