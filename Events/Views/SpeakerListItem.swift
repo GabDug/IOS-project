@@ -17,6 +17,7 @@ struct SpeakerListItem: View {
                 .frame(width: 155, height: 155)
             
             Text(speaker.fields.name)
+                .foregroundColor(.white)
         }
     }
 }
