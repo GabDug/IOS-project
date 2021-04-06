@@ -61,13 +61,12 @@ class EventsUITests: XCTestCase {
         
     }
 
-    
-    // Test existence of list elements
-    func testElementsExistence_Activities() throws {
+    func testPicker_FilteredElementsHaveGoodDate() throws {
+        let app = XCUIApplication()
         
-        
-        
-        
+        let activitiesContainerScrollView = app.scrollViews["Activities Container"]
+        let picker = activitiesContainerScrollView.pickers["Date picker"]
+        XCTAssert(picker.exists)
     }
 
     func testLaunchPerformance() throws {

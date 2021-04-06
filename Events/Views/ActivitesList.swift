@@ -56,6 +56,7 @@ struct ActivitesList: View {
                                         Text(DateUtils.formattedStringFromDate(from: $0))
                                     }
                                 }
+                                .accessibility(identifier: "Date picker")
                                 .pickerStyle(MenuPickerStyle())
                                 .font(.title2)
                             }
