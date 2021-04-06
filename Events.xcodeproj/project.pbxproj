@@ -36,6 +36,8 @@
 		EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */; };
 		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
 		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
+		EB3444E9261CAEAE009D3441 /* AttendeesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */; };
+		EB3444EE261CBC6C009D3441 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3444ED261CBC6C009D3441 /* PersonView.swift */; };
 		EB83B0BA261612070089F942 /* SpeakerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83B0B9261612070089F942 /* SpeakerRow.swift */; };
 		EBF8C2BE261C6DDE0067535F /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */; };
 		EBF8C2C9261C75050067535F /* NameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8C2C8261C75050067535F /* NameUtils.swift */; };
@@ -98,6 +100,8 @@
 		EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersAttendeesView.swift; sourceTree = "<group>"; };
 		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
+		EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesListView.swift; sourceTree = "<group>"; };
+		EB3444ED261CBC6C009D3441 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		EB83B0B9261612070089F942 /* SpeakerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerRow.swift; sourceTree = "<group>"; };
 		EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		EBF8C2C8261C75050067535F /* NameUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameUtils.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				EB09F5A4261471D200934F71 /* SpeakerListItem.swift */,
 				EB83B0B9261612070089F942 /* SpeakerRow.swift */,
 				C8783071261CBD9B00629103 /* OverlaysView.swift */,
+				EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */,
+				EB3444ED261CBC6C009D3441 /* PersonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				0ADA0C4626131DC0007383DB /* ContentView.swift in Sources */,
 				0AAA52482613230200C33AA3 /* ActivityRow.swift in Sources */,
 				050BAF5E2613712100020AC2 /* SponsorsCategoryRow.swift in Sources */,
+				EB3444E9261CAEAE009D3441 /* AttendeesListView.swift in Sources */,
 				C86C112A26190A130077AF69 /* LocationModel.swift in Sources */,
 				0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */,
 				050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */,
@@ -419,6 +426,7 @@
 				0ADA0C4426131DC0007383DB /* EventsApp.swift in Sources */,
 				0AAA522926131F7600C33AA3 /* ActivityModel.swift in Sources */,
 				C8783052261CAFD700629103 /* ApiErrorEnum.swift in Sources */,
+				EB3444EE261CBC6C009D3441 /* PersonView.swift in Sources */,
 				C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */,
 				0AAA52402613229B00C33AA3 /* ActivitiesDetails.swift in Sources */,
 			);

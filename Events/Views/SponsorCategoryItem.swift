@@ -25,6 +25,7 @@ struct SponsorCategoryItem: View {
             Text(sponsor.fields.name)
                 .foregroundColor(.primary)
                 .frame(width: 155)
+                .lineLimit(1)
         }
         
     }
