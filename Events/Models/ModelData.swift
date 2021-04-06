@@ -20,6 +20,10 @@ var speakerCategories: [String: [Speaker]] {
     )
 }
 
+
+/// Load a local JSON file
+/// - Parameter filename: path of the file in the Bundle
+/// - Returns: an object created from the parsed file
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 

@@ -22,7 +22,6 @@ struct SponsorsView: View {
             HStack {
                 ZStack {
                     BackgroundView()
-                    // TODO: categorize sponsors
                     ScrollView{
                         ForEach(Array(categorizedSponsors.keys), id: \.self) { key in
                             SponsorsCategoryRow(categoryName: key, items: categorizedSponsors[key] ?? [])

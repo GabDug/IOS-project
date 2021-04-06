@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Describe the error of an External API (Airtables.com)
 enum ApiError: Error {
     case httpError(Error)
     case apiError(String, String)

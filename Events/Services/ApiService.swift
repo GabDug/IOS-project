@@ -1,5 +1,7 @@
 import Foundation
 
+
+/// Service responsible to interact with Airtables API
 class ApiService {
     private static var token = "keyOfs3xSW3WokaED"
     
@@ -7,6 +9,7 @@ class ApiService {
     static func call<T: Decodable>(_ returning: T.Type, url: String, completionHandler: @escaping (T?) -> Void, errorHandler: @escaping (ApiError?) -> Void) {
         let url = URL(string: url)
         
+        // Set the URL and the Bearer
         var request = URLRequest(url: url!)
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
         
@@ -44,6 +47,7 @@ class ApiService {
             }
         })
         
+        // Start the async job
         task.resume()
     }
 }
