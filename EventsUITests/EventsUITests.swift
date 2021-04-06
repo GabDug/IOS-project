@@ -28,17 +28,21 @@ class EventsUITests: XCTestCase {
         let app = XCUIApplication()
         let activitiesListScrollView = app.scrollViews["Activities List"]
         let elementsQuery = activitiesListScrollView.otherElements
-        elementsQuery/*@START_MENU_TOKEN@*/.buttons["activiy0"]/*[[".buttons[\"Breakout session, Breakout session (Friday), 2:30 PM - 3:20 PM\"]",".buttons[\"activiy0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        elementsQuery.buttons["activity0"].tap()
         app.navigationBars["Breakout session (Friday)"].buttons["Activities"].tap()
         activitiesListScrollView.otherElements.containing(.button, identifier:"activiy0").element.swipeUp()
-        elementsQuery/*@START_MENU_TOKEN@*/.buttons["activiy4"]/*[[".buttons[\"Panel, Technology in the household, 10:30 AM - 11:20 AM\"]",".buttons[\"activiy4\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        elementsQuery.buttons["activity4"].tap()
         app.navigationBars["Technology in the household"].buttons["Activities"].tap()
         
         
     }
     
+    // Test existence of list elements
     func testElementsExistence_Activities() throws {
         
+        
+        
+    
         
     }
 

@@ -72,9 +72,10 @@ struct ActivitesList: View {
                                     ActivitiesRow(activity: activity)
                                     
                                 }
-                                .accessibility(identifier: "activiy\(activities.firstIndex(of:activity) ?? -1)")
+                                .accessibility(identifier: "activity\(activities.firstIndex(of:activity) ?? -1)")
                             }
                         }
+                        .accessibility(identifier: "Activies Container")
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .navigationTitle("Activities")
