@@ -4,21 +4,24 @@ class ApiService {
     private static var token = "keyOfs3xSW3WokaED"
     
     // Need to pass the type as an argument because type serialization
-    static func call<T: Decodable>(_ returning: T.Type, url: String, completionHandler: @escaping (T?) -> Void) {
-        let url = URL(string: url) // TODO: Remove the optional URL
+    static func call<T: Decodable>(_ returning: T.Type, url: String, completionHandler: @escaping (T?) -> Void, errorHandler: @escaping (ApiError?) -> Void) {
+        let url = URL(string: url)
         
         var request = URLRequest(url: url!)
         request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             if let error = error {
-                print("Error \(error)")
+                // Return the HTTP Client error
+                errorHandler(ApiError.httpError(error))
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("Error with the response, unexpected status code: \(String(describing: response))")
+                // API Error thrown
+                let httpCode: String = String((response as? HTTPURLResponse)?.statusCode ?? 0)
+                errorHandler(ApiError.apiError(httpCode, String(bytes: data ?? Data(), encoding: .utf8) ?? ""))
                 return
             }
             
@@ -35,7 +38,8 @@ class ApiService {
                     let decoded = try decoder.decode(T.self, from: data)
                     completionHandler(decoded)
                 } catch {
-                    print(error)
+                    // Decodable error
+                    errorHandler(ApiError.parseError(error, String(bytes: data, encoding: .utf8) ?? ""))
                 }
             }
         })

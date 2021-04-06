@@ -19,6 +19,10 @@ struct ActivitesList: View {
     @State var small = true
     @Namespace var namespace
     
+    @State private var showOverlay = false
+    @State private var titleBanner = "Error"
+    @State private var messageBanner = ""
+    
     @State private var activities: Array<Activity> = []
     
     init(activities: Array<Activity>?) {
@@ -47,9 +51,29 @@ struct ActivitesList: View {
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
+        .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
+                 , show: $showOverlay)
         .onAppear(perform: {
             ApiService.call(Root.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Schedule") { (data) in
                 activities = data?.activities ?? []
+            } errorHandler: { (error) in
+                withAnimation { () -> Void in
+                    switch (error) {
+                    case .none:
+                        break
+                    case .some(.apiError(_, _)):
+                        self.messageBanner = "An issue occured when querying the API"
+                        break
+                    case .some(.httpError(_)):
+                        self.messageBanner = "We couldn't reach the API"
+                        break
+                    case .some(.parseError(_, _)):
+                        self.messageBanner = "An issue occured while parsing the data"
+                        break
+                    }
+                    
+                    self.showOverlay = true
+                }
             }
         })
     }
