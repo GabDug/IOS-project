@@ -25,16 +25,10 @@ class EventsUITests: XCTestCase {
     // Test a simple navigation of the app
     func testNavigation_Activities() throws {
         
-        let app = XCUIApplication()
-        let activitiesListScrollView = app.scrollViews["Activities List"]
-        let activiesContainerElement = activitiesListScrollView.otherElements.containing(.button, identifier:"Activies Container").element
-        activiesContainerElement.swipeUp()
-        activiesContainerElement.swipeUp()
-        activiesContainerElement.swipeUp()
         
-        let panelHowToMakeAllYourDevicesPlayNice1030Am1120AmButton = activitiesListScrollView.otherElements.buttons["Panel, How to make all your devices play nice, 10:30 AM - 11:20 AM"]
-        panelHowToMakeAllYourDevicesPlayNice1030Am1120AmButton.tap()
-        app.navigationBars["How to make all your devices play nice"].buttons["Activities"].tap()
+        let app = XCUIApplication()
+        app.scrollViews["Activities List"].otherElements.buttons["Keynote, Opening remarks (Friday), 10:00 AM - 10:25 AM"].tap()
+        app.navigationBars["Opening remarks (Friday)"].buttons["Activities"].tap()
         
         
     }
@@ -75,7 +69,6 @@ class EventsUITests: XCTestCase {
         
         
     }
-
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
