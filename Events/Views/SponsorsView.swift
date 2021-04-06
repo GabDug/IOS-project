@@ -8,13 +8,8 @@
 import SwiftUI
 
 struct SponsorsView: View {
-    @State private var sponsors: Array<Sponsor> = []
-    
-    init(sponsors: Array<Sponsor>?) {
-        if (sponsors != nil) {
-            self.sponsors = sponsors!
-        }
-    }
+    @State private var sponsors: [Sponsor] = []
+    @State private var categorizedSponsors: [String: [Sponsor]] = Dictionary()
     
     var body: some View {
         NavigationView {
@@ -23,8 +18,9 @@ struct SponsorsView: View {
                     BackgroundView()
                     // TODO: categorize sponsors
                     ScrollView{
-                        ForEach(sponsors) { sponsor in
-                            SponsorsCategoryRow(categoryName: sponsor.fields.status, items: sponsors)
+                        ForEach(Array(categorizedSponsors.keys), id: \.self) { key in
+                            SponsorsCategoryRow(categoryName: key, items: categorizedSponsors[key] ?? [])
+                                .padding(.top)
                         }
                     }
                     
@@ -35,6 +31,12 @@ struct SponsorsView: View {
         .onAppear(perform: {
             ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") { (data) in
                 sponsors = data?.sponsors ?? []
+                if (sponsors.count > 0) {
+                    categorizedSponsors = Dictionary(
+                        grouping: sponsors,
+                        by: { $0.fields.status }
+                    )
+                }
             }
         })
     }
@@ -42,6 +44,6 @@ struct SponsorsView: View {
 
 struct SponsorsView_Previews: PreviewProvider {
     static var previews: some View {
-        SponsorsView(sponsors: localSponsors)
+        SponsorsView()
     }
 }
