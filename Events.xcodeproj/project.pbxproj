@@ -27,6 +27,7 @@
 		0ADA0C4B26131DC1007383DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ADA0C4A26131DC1007383DB /* Preview Assets.xcassets */; };
 		0ADA0C5626131DC1007383DB /* EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C5526131DC1007383DB /* EventsTests.swift */; };
 		0ADA0C6126131DC1007383DB /* EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C6026131DC1007383DB /* EventsUITests.swift */; };
+		C7039014261CE6C500F456C2 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7039013261CE6C500F456C2 /* DateUtils.swift */; };
 		C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86272DA2614553E00C91EF1 /* LocationUtils.swift */; };
 		C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862730926147CCB00C91EF1 /* ApiService.swift */; };
 		C86C112A26190A130077AF69 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86C112926190A130077AF69 /* LocationModel.swift */; };
@@ -91,6 +92,7 @@
 		0ADA0C5C26131DC1007383DB /* EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADA0C6026131DC1007383DB /* EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUITests.swift; sourceTree = "<group>"; };
 		0ADA0C6226131DC1007383DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7039013261CE6C500F456C2 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		C86272DA2614553E00C91EF1 /* LocationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtils.swift; sourceTree = "<group>"; };
 		C862730926147CCB00C91EF1 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		C86C112926190A130077AF69 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				C86272DA2614553E00C91EF1 /* LocationUtils.swift */,
 				EBF8C2BD261C6DDE0067535F /* ColorUtils.swift */,
 				EBF8C2C8261C75050067535F /* NameUtils.swift */,
+				C7039013261CE6C500F456C2 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */,
 				EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */,
 				EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */,
+				C7039014261CE6C500F456C2 /* DateUtils.swift in Sources */,
 				EBF8C2C9261C75050067535F /* NameUtils.swift in Sources */,
 				C8783072261CBD9B00629103 /* OverlaysView.swift in Sources */,
 				0AAA523B2613227700C33AA3 /* ActivitesList.swift in Sources */,
