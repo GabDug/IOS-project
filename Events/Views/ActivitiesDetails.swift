@@ -87,6 +87,8 @@ struct ActivitiesDetails: View {
                         if (data != nil) {
                             speakers.append(data!)
                         }
+                    } errorHandler: { (error) in
+                        // TODO: Do smth
                     }
                 })
             }
@@ -109,6 +111,8 @@ struct ActivitiesDetails: View {
                         regionLoaded = true
                     }
                 })
+            } errorHandler: { (error) in
+                // TODO: Do smth
             }
         })
     }

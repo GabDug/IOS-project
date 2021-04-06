@@ -58,6 +58,8 @@ struct SponsorDetails: View {
                         if (data != nil) {
                             contact.append(data!)
                         }
+                    } errorHandler: { (error) in
+                        // TODO: Do smth
                     }
                 }
             }

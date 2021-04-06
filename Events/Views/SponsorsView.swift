@@ -37,6 +37,8 @@ struct SponsorsView: View {
                         by: { $0.fields.status }
                     )
                 }
+            } errorHandler: { (error) in
+                // TODO: Display something
             }
         })
     }
