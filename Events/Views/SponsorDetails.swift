@@ -61,7 +61,7 @@ struct SponsorDetails: View {
                         Speaker.self,
                         url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)"
                     ) { data in
-                        if (data != nil) {
+                        if (data != nil && contact.count == 0) {
                             contact.append(data!)
                         }
                     } errorHandler: { (error) in
