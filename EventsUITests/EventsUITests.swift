@@ -21,33 +21,25 @@ class EventsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testTitle() throws {
-        let title = app.staticTexts["SW Caracters"]
-        XCTAssert(title.exists)
-        XCTAssertEqual(title.label, "SW Caracters")
-    }
     
-    func testNumberOfRow() throws {
-        let tableView = app.tables["tableView"]
-        XCTAssert(tableView.exists)
-        XCTAssertTrue(tableView.cells.count > 0)
-    }
-
-    func testRowDisplay() throws {
-        let tableView = app.tables.firstMatch
-        let cell = tableView.cells.firstMatch
-        
-        XCTAssertTrue(cell.images.count == 1)
-        XCTAssertTrue(cell.staticTexts.count == 1)
-    }
-    
+    // Test a simple navigation of the app
     func testNavigation() throws {
-        let tableView = app.tables.firstMatch
-        let cell = tableView.cells.firstMatch
+
+        let app = XCUIApplication()
+        let activitiesListScrollView = app.scrollViews["Activities List"]
+        let elementsQuery = activitiesListScrollView.otherElements
+        elementsQuery/*@START_MENU_TOKEN@*/.buttons["activiy0"]/*[[".buttons[\"Breakout session, Breakout session (Friday), 2:30 PM - 3:20 PM\"]",".buttons[\"activiy0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Breakout session (Friday)"].buttons["Activities"].tap()
+        activitiesListScrollView.otherElements.containing(.button, identifier:"activiy0").element.swipeUp()
+        elementsQuery/*@START_MENU_TOKEN@*/.buttons["activiy4"]/*[[".buttons[\"Panel, Technology in the household, 10:30 AM - 11:20 AM\"]",".buttons[\"activiy4\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Technology in the household"].buttons["Activities"].tap()
         
-        cell.tap()
-        let title = app.staticTexts["SW Caracters"]
-        XCTAssertFalse(title.exists)
+        
+    }
+    
+    func testElementsExistence_Activities() throws {
+        
+        
     }
 
 

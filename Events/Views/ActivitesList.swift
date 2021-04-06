@@ -70,12 +70,15 @@ struct ActivitesList: View {
                             ) { activity in
                                 NavigationLink(destination: ActivitiesDetails(activity: activity)) {
                                     ActivitiesRow(activity: activity)
+                                    
                                 }
+                                .accessibility(identifier: "activiy\(activities.firstIndex(of:activity) ?? -1)")
                             }
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .navigationTitle("Activities")
+                    .accessibility(identifier: "Activities List")
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
