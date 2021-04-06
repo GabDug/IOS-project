@@ -25,6 +25,7 @@ struct ActivitiesDetails: View {
         return formatter
     }()
     
+    @State private var regionLoaded = false
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     @State private var annotations: Array<CLLocationCoordinate2D> = []
@@ -68,9 +69,11 @@ struct ActivitiesDetails: View {
                     }
                 }
                 
-                Map(coordinateRegion: $region, annotationItems: annotations) {
-                    MapPin(coordinate: $0)
-                }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 400, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                if (regionLoaded) {
+                    Map(coordinateRegion: $region, annotationItems: annotations) {
+                        MapPin(coordinate: $0)
+                    }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 400, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
             }
             .padding()
         }
@@ -99,9 +102,12 @@ struct ActivitiesDetails: View {
                         return
                     }
                     
-                    region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-                    annotations.removeAll()
-                    annotations.append(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                    DispatchQueue.main.async {
+                        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                        annotations.removeAll()
+                        annotations.append(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                        regionLoaded = true
+                    }
                 })
             }
         })
