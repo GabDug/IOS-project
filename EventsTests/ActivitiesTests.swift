@@ -11,14 +11,14 @@ import XCTest
 
 class ActivitiesTests: XCTestCase {
 
-    func testLoadingActivitesFromJSON() throws {
+    func testLoadingFromJSON() throws {
         let root: Root = Events.load("activities.json")
         let activities = root.activities
         
         XCTAssertNotNil(activities)
     }
     
-    func testLoadingActivitiesFromAPI() throws {
+    func testLoadingFromAPI() throws {
         var activities: [Activity]?
         let expectation = self.expectation(description: "API call")
 
@@ -32,7 +32,7 @@ class ActivitiesTests: XCTestCase {
         XCTAssertNotNil(activities)
     }
 
-    func testPerformanceOfLoadingActivitiesFromAPI() throws {
+    func testPerformanceOfLoadingFromAPI() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
