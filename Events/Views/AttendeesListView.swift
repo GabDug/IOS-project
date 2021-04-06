@@ -31,7 +31,7 @@ struct AttendeesListView: View {
                             }
                         }
                     }
-                    
+                    .accessibility(identifier: "Attendees Container")
                     .navigationTitle("Attendees")
                 }
             }

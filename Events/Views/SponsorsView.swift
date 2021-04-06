@@ -28,7 +28,7 @@ struct SponsorsView: View {
                                 .padding(.top)
                         }
                     }
-                    
+                    .accessibility(identifier: "Sponsors Container")
                     .navigationTitle("Sponsors")
                 }
             }

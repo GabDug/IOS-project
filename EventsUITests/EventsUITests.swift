@@ -23,26 +23,56 @@ class EventsUITests: XCTestCase {
 
     
     // Test a simple navigation of the app
-    func testNavigation() throws {
-
+    func testNavigation_Activities() throws {
+        
         let app = XCUIApplication()
         let activitiesListScrollView = app.scrollViews["Activities List"]
-        let elementsQuery = activitiesListScrollView.otherElements
-        elementsQuery.buttons["activity0"].tap()
-        app.navigationBars["Breakout session (Friday)"].buttons["Activities"].tap()
-        activitiesListScrollView.otherElements.containing(.button, identifier:"activiy0").element.swipeUp()
-        elementsQuery.buttons["activity4"].tap()
-        app.navigationBars["Technology in the household"].buttons["Activities"].tap()
+        let activiesContainerElement = activitiesListScrollView.otherElements.containing(.button, identifier:"Activies Container").element
+        activiesContainerElement.swipeUp()
+        activiesContainerElement.swipeUp()
+        activiesContainerElement.swipeUp()
+        
+        let panelHowToMakeAllYourDevicesPlayNice1030Am1120AmButton = activitiesListScrollView.otherElements.buttons["Panel, How to make all your devices play nice, 10:30 AM - 11:20 AM"]
+        panelHowToMakeAllYourDevicesPlayNice1030Am1120AmButton.tap()
+        app.navigationBars["How to make all your devices play nice"].buttons["Activities"].tap()
         
         
     }
+    
+    // Test a simple navigation of the app
+    func testNavigation_Sponsors() throws {
+        
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["Sponsors"].tap()
+        
+        let sponsorsContainerScrollView = app.scrollViews["Sponsors Container"]
+        sponsorsContainerScrollView.otherElements.containing(.staticText, identifier:"Pledged $").element.swipeUp()
+        sponsorsContainerScrollView.otherElements.scrollViews.otherElements.buttons["AE, Absolute Electric"].tap()
+        app.navigationBars["Absolute Electric"].buttons["Sponsors"].tap()
+        
+    }
+    
+    // Test a simple navigation of the app
+    func testNavigation_Attendees() throws {
+
+        
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["Attendees"].tap()
+        
+        let elementsQuery = app.scrollViews["Attendees Container"]
+        elementsQuery.swipeUp()
+        elementsQuery.buttons["PD, Peyton Devereaux"].tap()
+        app.navigationBars["Peyton Devereaux"].buttons["Attendees"].tap()
+        
+        
+    }
+
     
     // Test existence of list elements
     func testElementsExistence_Activities() throws {
         
         
         
-    
         
     }
 
