@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SponsorDetails: View {
     var sponsor: Sponsor
+    @State private var contact: [Speaker] = []
     
     var body: some View {
         ScrollView {
@@ -32,12 +33,11 @@ struct SponsorDetails: View {
                 Divider()
                 
                 // TODO: transform contact ids into real contacts
-                if (sponsor.fields.contactsId != nil) {
-                    Text("Contacts")
-                        .font(.headline)
-                    
-                    ForEach(sponsor.fields.contactsId ?? [], id: \.self) { contact in
-                        Text(contact)
+                Group {
+                    if (contact.count > 0) {
+                        SpeakerRow(speakers: contact)
+                    } else {
+                        Text("No contact for this sponsor")
                     }
                 }
                 
@@ -48,6 +48,20 @@ struct SponsorDetails: View {
         }
         .navigationTitle(sponsor.fields.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear(perform: {
+            if (sponsor.fields.contactsId != nil) {
+                sponsor.fields.contactsId?.forEach { id in
+                    ApiService.call(
+                        Speaker.self,
+                        url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)"
+                    ) { data in
+                        if (data != nil) {
+                            contact.append(data!)
+                        }
+                    }
+                }
+            }
+        })
     }
 }
 
