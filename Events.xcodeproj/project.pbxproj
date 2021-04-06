@@ -10,6 +10,7 @@
 		050BAF5E2613712100020AC2 /* SponsorsCategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BAF5D2613712100020AC2 /* SponsorsCategoryRow.swift */; };
 		050BAF63261379F700020AC2 /* SponsorCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */; };
 		0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589331826146B1B00278B87 /* SponsorDetails.swift */; };
+		059690BC261CA1CC00B13AE2 /* ActivitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059690BB261CA1CC00B13AE2 /* ActivitiesTests.swift */; };
 		0A55E68C2613ACDA0063D607 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A55E68B2613ACDA0063D607 /* Colors.xcassets */; };
 		0A6A9F8A2614658E004178AB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6A9F892614658E004178AB /* BackgroundView.swift */; };
 		0AAA522926131F7600C33AA3 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA522826131F7600C33AA3 /* ActivityModel.swift */; };
@@ -25,7 +26,6 @@
 		0ADA0C4626131DC0007383DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C4526131DC0007383DB /* ContentView.swift */; };
 		0ADA0C4826131DC1007383DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ADA0C4726131DC1007383DB /* Assets.xcassets */; };
 		0ADA0C4B26131DC1007383DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ADA0C4A26131DC1007383DB /* Preview Assets.xcassets */; };
-		0ADA0C5626131DC1007383DB /* EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C5526131DC1007383DB /* EventsTests.swift */; };
 		0ADA0C6126131DC1007383DB /* EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA0C6026131DC1007383DB /* EventsUITests.swift */; };
 		C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86272DA2614553E00C91EF1 /* LocationUtils.swift */; };
 		C862730A26147CCB00C91EF1 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C862730926147CCB00C91EF1 /* ApiService.swift */; };
@@ -65,6 +65,7 @@
 		050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorCategoryItem.swift; sourceTree = "<group>"; };
 		050C7273261452170002543B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0589331826146B1B00278B87 /* SponsorDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorDetails.swift; sourceTree = "<group>"; };
+		059690BB261CA1CC00B13AE2 /* ActivitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTests.swift; sourceTree = "<group>"; };
 		0A3EF8182614684300E8C4F8 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		0A55E68B2613ACDA0063D607 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0A55E6932613C1D40063D607 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		0ADA0C4A26131DC1007383DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0ADA0C4C26131DC1007383DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADA0C5126131DC1007383DB /* EventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ADA0C5526131DC1007383DB /* EventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTests.swift; sourceTree = "<group>"; };
 		0ADA0C5726131DC1007383DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ADA0C5C26131DC1007383DB /* EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADA0C6026131DC1007383DB /* EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUITests.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		0ADA0C5426131DC1007383DB /* EventsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0ADA0C5526131DC1007383DB /* EventsTests.swift */,
+				059690BB261CA1CC00B13AE2 /* ActivitiesTests.swift */,
 				0ADA0C5726131DC1007383DB /* Info.plist */,
 			);
 			path = EventsTests;
@@ -436,7 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ADA0C5626131DC1007383DB /* EventsTests.swift in Sources */,
+				059690BC261CA1CC00B13AE2 /* ActivitiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,9 +586,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Events/Preview Content\"";
-				DEVELOPMENT_TEAM = TQ5ST5M9X9;
+				DEVELOPMENT_TEAM = R4J55N42T7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Events/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -596,7 +597,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.neatup.efrei.Events;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.thibaultlepez.Event;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -610,9 +611,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Events/Preview Content\"";
-				DEVELOPMENT_TEAM = TQ5ST5M9X9;
+				DEVELOPMENT_TEAM = R4J55N42T7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Events/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -620,7 +622,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.neatup.efrei.Events;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.thibaultlepez.Event;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -633,8 +635,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TQ5ST5M9X9;
+				DEVELOPMENT_TEAM = R4J55N42T7;
 				INFOPLIST_FILE = EventsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,8 +658,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TQ5ST5M9X9;
+				DEVELOPMENT_TEAM = R4J55N42T7;
 				INFOPLIST_FILE = EventsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -676,15 +680,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TQ5ST5M9X9;
+				DEVELOPMENT_TEAM = R4J55N42T7;
 				INFOPLIST_FILE = EventsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.neatup.efrei.EventsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.thibaultlepez.EventsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -696,15 +701,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TQ5ST5M9X9;
+				DEVELOPMENT_TEAM = R4J55N42T7;
 				INFOPLIST_FILE = EventsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.neatup.efrei.EventsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.thibaultlepez.EventsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
