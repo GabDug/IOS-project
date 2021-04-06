@@ -12,6 +12,8 @@
 		0514DDEE261CC3D6008677C1 /* SponsorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514DDED261CC3D6008677C1 /* SponsorsTests.swift */; };
 		0514DE0B261CCE62008677C1 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514DE0A261CCE62008677C1 /* UtilsTests.swift */; };
 		0514DE2F261CDAAC008677C1 /* ServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0514DE2E261CDAAC008677C1 /* ServicesTests.swift */; };
+		0514DE62261CF59F008677C1 /* corupt-activities.json in Resources */ = {isa = PBXBuildFile; fileRef = 0514DE54261CF3F0008677C1 /* corupt-activities.json */; };
+		0514DE69261CF5A1008677C1 /* corupt-activities.json in Resources */ = {isa = PBXBuildFile; fileRef = 0514DE54261CF3F0008677C1 /* corupt-activities.json */; };
 		0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589331826146B1B00278B87 /* SponsorDetails.swift */; };
 		059690BC261CA1CC00B13AE2 /* ActivitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059690BB261CA1CC00B13AE2 /* ActivitiesTests.swift */; };
 		0A55E68C2613ACDA0063D607 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A55E68B2613ACDA0063D607 /* Colors.xcassets */; };
@@ -72,6 +74,7 @@
 		0514DDED261CC3D6008677C1 /* SponsorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsTests.swift; sourceTree = "<group>"; };
 		0514DE0A261CCE62008677C1 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		0514DE2E261CDAAC008677C1 /* ServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesTests.swift; sourceTree = "<group>"; };
+		0514DE54261CF3F0008677C1 /* corupt-activities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "corupt-activities.json"; sourceTree = "<group>"; };
 		0589331826146B1B00278B87 /* SponsorDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorDetails.swift; sourceTree = "<group>"; };
 		059690BB261CA1CC00B13AE2 /* ActivitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTests.swift; sourceTree = "<group>"; };
 		0A3EF8182614684300E8C4F8 /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 		0AB413FB261327E5009A8375 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0514DE54261CF3F0008677C1 /* corupt-activities.json */,
 				C878303F2619F16B00629103 /* speaker.json */,
 				0AB4140826135E75009A8375 /* sponsor.json */,
 				0AB413FC261327F3009A8375 /* activities.json */,
@@ -391,6 +395,7 @@
 				0A55E68C2613ACDA0063D607 /* Colors.xcassets in Resources */,
 				0AB4140926135E75009A8375 /* sponsor.json in Resources */,
 				C87830402619F16B00629103 /* speaker.json in Resources */,
+				0514DE62261CF59F008677C1 /* corupt-activities.json in Resources */,
 				0ADA0C4B26131DC1007383DB /* Preview Assets.xcassets in Resources */,
 				0ADA0C4826131DC1007383DB /* Assets.xcassets in Resources */,
 				0AB413FD261327F3009A8375 /* activities.json in Resources */,
@@ -401,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0514DE69261CF5A1008677C1 /* corupt-activities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

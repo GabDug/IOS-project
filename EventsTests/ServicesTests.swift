@@ -11,9 +11,15 @@ import XCTest
 
 class ServicesTests: XCTestCase {
 
-    func testJSONLoadingError() throws {
+    func testJSONWithWrongPath() throws {
         expectFatalError(expectedMessage: "Couldn't find test.json in main bundle.") {
             var _: Root = ModelData.load("test.json")
+        }
+    }
+    
+    func testJSONWithWrongData() throws {
+        expectFatalError(expectedMessage: "Couldn't parse activities.json") {
+            var _: RootSponsors = ModelData.load("activities.json")
         }
     }
 
@@ -30,7 +36,7 @@ class ServicesTests: XCTestCase {
     }
     
     func testAPIWithWrongData() throws {
-        Events.ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees", completionHandler: {
+        Events.ApiService.call(Activity.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees", completionHandler: {
             _ in
         }, errorHandler: { _ in })
     }

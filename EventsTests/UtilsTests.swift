@@ -44,4 +44,14 @@ class UtilsTests: XCTestCase {
         
         XCTAssertNotNil(coord)
     }
+    
+    func testLocationWithWrongAddress() throws {
+        let expect = expectation(description: "Address converiton")
+        
+        Events.LocationUtils.coordinates(forAddress: "lorem ipsuuum") { _ in
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
