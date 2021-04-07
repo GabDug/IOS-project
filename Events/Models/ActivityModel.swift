@@ -18,11 +18,11 @@ struct Root: Decodable {
 struct Activity: Hashable, Codable, Identifiable {
     var id: String
     var createdTime: Date
-    var fields: Fields
+    var fields: ActivityFields
     
 }
 
-struct Fields: Hashable, Codable {
+struct ActivityFields: Hashable, Codable {
     var type: String
     
     var startDate: Date

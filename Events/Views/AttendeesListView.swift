@@ -1,35 +1,38 @@
 //
-//  SponsorsView.swift
+//  AttendeesListView.swift
 //  Events
 //
-//  Created by Gabriel on 30/03/2021.
+//  Created by Ruben on 06/04/2021.
 //
 
 import SwiftUI
 
-struct SponsorsView: View {
+struct AttendeesListView: View {
     @State private var isLoaded = false
     
     @State private var showOverlay = false
     @State private var titleBanner = "Error"
     @State private var messageBanner = ""
     
-    @State private var sponsors: [Sponsor] = []
-    @State private var categorizedSponsors: [String: [Sponsor]] = Dictionary()
+    @State private var attendees: Array<Speaker> = []
+    
+    private var twoColumnsGrid: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         NavigationView {
             HStack {
                 ZStack {
                     BackgroundView()
-                    ScrollView{
-                        ForEach(Array(categorizedSponsors.keys), id: \.self) { key in
-                            SponsorsCategoryRow(categoryName: key, items: categorizedSponsors[key] ?? [])
-                                .padding(.top)
+                    
+                    ScrollView {
+                        LazyVGrid(columns: twoColumnsGrid) {
+                            ForEach(attendees) { attendee in
+                                SpeakerListItem(speaker: attendee)
+                            }
                         }
                     }
-                    .accessibility(identifier: "Sponsors Container")
-                    .navigationTitle("Sponsors")
+                    .accessibility(identifier: "Attendees Container")
+                    .navigationTitle("Attendees")
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
@@ -42,17 +45,11 @@ struct SponsorsView: View {
                 return
             }
             
-            ApiService.call(RootSponsors.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Sponsors") { (data) in
+            ApiService.call(RootSpeaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees?filterByFormula=SEARCH(%22Attendee%22%2CType)") { data in
                 isLoaded = true
-                sponsors = data?.sponsors ?? []
-                if (sponsors.count > 0) {
-                    categorizedSponsors = Dictionary(
-                        grouping: sponsors,
-                        by: { $0.fields.status }
-                    )
-                }
+                attendees = data?.speakers ?? []
             } errorHandler: { (error) in
-                // Display an error message
+                // Display a banner with an error message
                 withAnimation { () -> Void in
                     switch (error) {
                     case .none:
@@ -75,8 +72,8 @@ struct SponsorsView: View {
     }
 }
 
-struct SponsorsView_Previews: PreviewProvider {
+struct AttendeesListView_Previews: PreviewProvider {
     static var previews: some View {
-        SponsorsView()
+        AttendeesListView()
     }
 }

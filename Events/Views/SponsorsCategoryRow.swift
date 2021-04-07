@@ -17,12 +17,17 @@ struct SponsorsCategoryRow: View {
                 Text(categoryName)
                     .font(.headline)
             }
+            .padding(.leading)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top ) {
                     ForEach(items) { sponsor in
-                        SponsorCategoryItem(sponsor: sponsor)
+                        NavigationLink(destination: SponsorDetails(sponsor: sponsor)) {
+                            SponsorCategoryItem(sponsor: sponsor)
+                        }
+                        
                     }
+                    .padding(.leading)
                 }
             }
             .frame(height:185)
@@ -32,10 +37,11 @@ struct SponsorsCategoryRow: View {
 
 struct SponsorsCategoryRow_Previews:
     PreviewProvider {
+    // Fake local data with JSON
     static var previews: some View {
         SponsorsCategoryRow(
             categoryName: "Pledged",
-            items: sponsors
+            items: localSponsors
         )
         .previewLayout(.fixed(width: 400, height: 300))
     }

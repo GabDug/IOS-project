@@ -23,11 +23,12 @@ struct ActivitiesRow: View {
 }
 
 struct ActivitesRow_Previews: PreviewProvider {
+    // Fake local data
     static var previews: some View {
         Group {
-            ActivitiesRow(activity: activities[0])
+            ActivitiesRow(activity: localActivities[0])
                 .preferredColorScheme(.light)
-            ActivitiesRow(activity: activities[1])
+            ActivitiesRow(activity: localActivities[1])
         }
         .previewLayout(.fixed(width: 400, height: 130))
     }
@@ -62,7 +63,7 @@ struct smallcardView: View {
                         blurTags(tags: tagsArray, namespace: namespace)
                         //Spacer()
                         Text(p.fields.name)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color("Foreground"))
                             .matchedGeometryEffect(id: "title", in: namespace)
                         Spacer()
                         HStack {
@@ -70,7 +71,7 @@ struct smallcardView: View {
                             Text("\(p.fields.startDate, formatter: Self.taskDateFormat) - \(p.fields.endDate, formatter: Self.taskDateFormat)")
                                 .font(.subheadline)
                                 .font(.caption2)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("Foreground"))
                         }
                     }.padding(.leading)
                     Spacer()
@@ -113,7 +114,7 @@ struct blurTags:  View {
             ForEach(tags, id: \.self) { tag in
                 Text("\(tag)")
                     .fontWeight(.semibold)
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("Foreground"))
                     .font(.caption)
                 
             }
