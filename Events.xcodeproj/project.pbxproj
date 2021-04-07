@@ -39,7 +39,6 @@
 		C8783072261CBD9B00629103 /* OverlaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8783071261CBD9B00629103 /* OverlaysView.swift */; };
 		C878308B261CE8D900629103 /* FatalErrorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878308A261CE8D900629103 /* FatalErrorUtils.swift */; };
 		C87830A2261CEBC900629103 /* CustomTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87830A1261CEBC900629103 /* CustomTestCase.swift */; };
-		EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */; };
 		EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F59F261465ED00934F71 /* SpeakerModel.swift */; };
 		EB09F5A5261471D200934F71 /* SpeakerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB09F5A4261471D200934F71 /* SpeakerListItem.swift */; };
 		EB3444E9261CAEAE009D3441 /* AttendeesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */; };
@@ -109,7 +108,6 @@
 		C8783071261CBD9B00629103 /* OverlaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaysView.swift; sourceTree = "<group>"; };
 		C878308A261CE8D900629103 /* FatalErrorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalErrorUtils.swift; sourceTree = "<group>"; };
 		C87830A1261CEBC900629103 /* CustomTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTestCase.swift; sourceTree = "<group>"; };
-		EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersAttendeesView.swift; sourceTree = "<group>"; };
 		EB09F59F261465ED00934F71 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		EB09F5A4261471D200934F71 /* SpeakerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerListItem.swift; sourceTree = "<group>"; };
 		EB3444E8261CAEAE009D3441 /* AttendeesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesListView.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				EB3444ED261CBC6C009D3441 /* PersonView.swift */,
 				EB09F5A4261471D200934F71 /* SpeakerListItem.swift */,
 				EB83B0B9261612070089F942 /* SpeakerRow.swift */,
-				EB09F59526145AE400934F71 /* SpeakersAttendeesView.swift */,
 				050BAF62261379F700020AC2 /* SponsorCategoryItem.swift */,
 				0589331826146B1B00278B87 /* SponsorDetails.swift */,
 				050BAF5D2613712100020AC2 /* SponsorsCategoryRow.swift */,
@@ -424,7 +421,6 @@
 				C86272DB2614553E00C91EF1 /* LocationUtils.swift in Sources */,
 				0589331926146B1B00278B87 /* SponsorDetails.swift in Sources */,
 				EB09F5A0261465ED00934F71 /* SpeakerModel.swift in Sources */,
-				EB09F59626145AE400934F71 /* SpeakersAttendeesView.swift in Sources */,
 				C7039014261CE6C500F456C2 /* DateUtils.swift in Sources */,
 				EBF8C2C9261C75050067535F /* NameUtils.swift in Sources */,
 				C8783072261CBD9B00629103 /* OverlaysView.swift in Sources */,
