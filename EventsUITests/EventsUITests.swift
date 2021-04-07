@@ -66,15 +66,15 @@ class EventsUITests: XCTestCase {
         
         let app = XCUIApplication()
         let elementsQuery = app.scrollViews["Activities List"].otherElements
-        elementsQuery.buttons["Panel, How to make all your devices play nice, 10:30 AM - 11:20 AM"].tap()
+        elementsQuery.buttons["Panel, How to make all your devices play nice, 11:30 AM - 12:20 PM"].tap()
         app.navigationBars["How to make all your devices play nice"].swipeUp()
         app.navigationBars["How to make all your devices play nice"].swipeDown()
         app.navigationBars["How to make all your devices play nice"].buttons["Activities"].tap()
         
-        elementsQuery.buttons["Workshop, Workshop for security professionals, 11:30 AM - 12:00 PM"].tap()
+        elementsQuery.buttons["Workshop, Workshop for security professionals, 12:30 PM - 1:00 PM"].tap()
         app.navigationBars["Workshop for security professionals"].buttons["Activities"].tap()
         
-        elementsQuery.buttons["Panel, Which security solution is best for you?, 1:30 PM - 2:20 PM"].tap()
+        elementsQuery.buttons["Panel, Which security solution is best for you?, 2:30 PM - 3:20 PM"].tap()
         let elementsQuery2 = app.scrollViews.otherElements.scrollViews.otherElements
         elementsQuery2.buttons["SO, Stephan Oswald"].tap()
         app.navigationBars["Stephan Oswald"].buttons["Which security solution is best for you?"].tap()
