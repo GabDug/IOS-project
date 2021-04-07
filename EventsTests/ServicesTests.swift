@@ -29,6 +29,7 @@ class ServicesTests: XCTestCase {
         }, errorHandler: { _ in })
     }
     
+    
     func testAPIWithWrongEndpoint() throws {
         Events.ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/wrongId", completionHandler: {
             _ in

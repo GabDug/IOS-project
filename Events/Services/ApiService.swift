@@ -19,7 +19,6 @@ class ApiService {
                 errorHandler(ApiError.httpError(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 // API Error thrown

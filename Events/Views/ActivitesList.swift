@@ -57,6 +57,7 @@ struct ActivitesList: View {
                                         Text(DateUtils.formattedStringFromDate(from: $0))
                                     }
                                 }
+                                .accessibility(identifier: "Date picker")
                                 .pickerStyle(MenuPickerStyle())
                                 .font(.title2)
                             }
@@ -72,12 +73,16 @@ struct ActivitesList: View {
                             ) { activity in
                                 NavigationLink(destination: ActivitiesDetails(activity: activity)) {
                                     ActivitiesRow(activity: activity)
+                                    
                                 }
+                                .accessibility(identifier: "activity\(activities.firstIndex(of:activity) ?? -1)")
                             }
                         }
+                        .accessibility(identifier: "Activies Container")
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .navigationTitle("Activities")
+                    .accessibility(identifier: "Activities List")
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
