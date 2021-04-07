@@ -19,7 +19,6 @@ struct PersonView: View {
         self.person = person
     }
     
-    
     var body: some View {
         ZStack {
             BackgroundView()
@@ -83,6 +82,7 @@ struct PersonView: View {
         }}
         .navigationTitle(person.fields.name)
         .navigationBarTitleDisplayMode(.inline)
+        // Banner notification
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
@@ -91,6 +91,7 @@ struct PersonView: View {
                     company = data!
                 }
             } errorHandler: { (error) in
+                // Display an error message
                 withAnimation { () -> Void in
                     switch (error) {
                     case .none:
@@ -114,6 +115,7 @@ struct PersonView: View {
 }
 
 struct PersonView_Previews: PreviewProvider {
+    // Fake local data with JSON
     static var previews: some View {
         PersonView(person: localSpeakers[0])
     }

@@ -48,6 +48,7 @@ struct ActivitesList: View {
                     ScrollView {
                         VStack {
                             HStack {
+                                // Date picker per day
                                 Text("Selected date:")
                                     .font(.title2)
                                 
@@ -60,6 +61,7 @@ struct ActivitesList: View {
                                 .font(.title2)
                             }
                             
+                            // Display filtered activies
                             ForEach(
                                 activities.filter { activity in
                                     DateUtils.dayOnlyDateFromDate(from: activity.fields.startDate) == selectedDate
@@ -79,13 +81,16 @@ struct ActivitesList: View {
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
+        // Notification Banner
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
+            // Prevent double loading
             if (isLoaded) {
                 return
             }
             
+            // Load activities
             ApiService.call(Root.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Schedule") { (data) in
                 isLoaded = true
                 activities = data?.activities ?? []
@@ -103,6 +108,7 @@ struct ActivitesList: View {
                     selectedDate = availableDates[0]
                 }
             } errorHandler: { (error) in
+                // Banner handling
                 withAnimation { () -> Void in
                     switch (error) {
                     case .none:
@@ -127,6 +133,7 @@ struct ActivitesList: View {
 
 struct ActivitesList_Previews: PreviewProvider {
     static var previews: some View {
+        // For preview we load fake local data
         ForEach(["iPhone SE (2nd generation)", "iPhone XS Max"], id: \.self) { deviceName in
             ActivitesList(activities: localActivities)
                 .previewDevice(PreviewDevice(rawValue: deviceName))

@@ -36,9 +36,11 @@ struct AttendeesListView: View {
                 }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
+        // Banner notification
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
+            // Prevent double data loading
             if (isLoaded) {
                 return
             }
@@ -47,6 +49,7 @@ struct AttendeesListView: View {
                 isLoaded = true
                 attendees = data?.speakers ?? []
             } errorHandler: { (error) in
+                // Display a banner with an error message
                 withAnimation { () -> Void in
                     switch (error) {
                     case .none:

@@ -23,6 +23,7 @@ struct ActivitiesRow: View {
 }
 
 struct ActivitesRow_Previews: PreviewProvider {
+    // Fake local data
     static var previews: some View {
         Group {
             ActivitiesRow(activity: localActivities[0])

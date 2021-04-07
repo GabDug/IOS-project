@@ -32,6 +32,7 @@ struct SponsorCategoryItem: View {
 }
 
 struct SponsorCategoryItem_Previews: PreviewProvider {
+    // Fake local data JSON
     static var previews: some View {
         SponsorCategoryItem(
             sponsor: localSponsors[1]

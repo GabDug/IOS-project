@@ -38,138 +38,146 @@ struct ActivitiesDetails: View {
     
     var body: some View {
         ZStack{
-                    BackgroundView()
-        ScrollView {
-            VStack(alignment: .leading) {
-                Group {
-                    Text(activity.fields.name )
-                        .font(.title)
-                    
-                    HStack {
-                        Text(activity.fields.type )
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                }
-                
-                Divider()
-                
-                Group {
-                    Text(activity.fields.description ?? "No description for this event.").font(.body).fixedSize(horizontal: false, vertical: true)
-                }
-                
-                Divider()
-                
-                Group {
-                    Text("Starting \(activity.fields.startDate , formatter: Self.taskDateFormat)")
-                    Text("Ending \(activity.fields.endDate , formatter: Self.taskDateFormat)")
-                }
-                
-                Divider()
-                
-                Group {
-                    if (speakers.count > 0) {
-                        SpeakerRow(speakers: speakers)
-                    } else {
-                        Text("No speakers registered for this activity.")
-                    }
-                }
-                
-                if (regionLoaded) {
-                    Map(coordinateRegion: $region, annotationItems: annotations) {
-                        MapPin(coordinate: $0)
-                    }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 400, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }
-            }
-            .padding()
-        }}
-        .navigationTitle(activity.fields.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
-                 , show: $showOverlay)
-        .onAppear(perform: {
-            if (isLoaded) {
-                return
-            }
-            
-            if (activity.fields.speakersId != nil) {
-                activity.fields.speakersId?.forEach({ (id) in
-                    ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)") {
-                        (data) in
-                        isLoaded = true;
+            BackgroundView()
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Group {
+                        Text(activity.fields.name )
+                            .font(.title)
                         
-                        if (data != nil) {
-                            speakers.append(data!)
+                        HStack {
+                            Text(activity.fields.type )
                         }
-                    } errorHandler: { (error) in
-                        withAnimation { () -> Void in
-                            switch (error) {
-                            case .none:
-                                break
-                            case .some(.apiError(_, _)):
-                                self.messageBanner = "An issue occured when querying the API"
-                                break
-                            case .some(.httpError(_)):
-                                self.messageBanner = "We couldn't reach the API"
-                                break
-                            case .some(.parseError(_, _)):
-                                self.messageBanner = "An issue occured while parsing the data"
-                                break
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    }
+                    
+                    Divider()
+                    
+                    Group {
+                        Text(activity.fields.description ?? "No description for this event.").font(.body).fixedSize(horizontal: false, vertical: true)
+                    }
+                    
+                    Divider()
+                    
+                    Group {
+                        Text("Starting \(activity.fields.startDate , formatter: Self.taskDateFormat)")
+                        Text("Ending \(activity.fields.endDate , formatter: Self.taskDateFormat)")
+                    }
+                    
+                    Divider()
+                    
+                    Group {
+                        if (speakers.count > 0) {
+                            SpeakerRow(speakers: speakers)
+                        } else {
+                            Text("No speakers registered for this activity.")
+                        }
+                    }
+                    
+                    // Only display the map if we have a location
+                    if (regionLoaded) {
+                        Map(coordinateRegion: $region, annotationItems: annotations) {
+                            MapPin(coordinate: $0)
+                        }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 400, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+                }
+                .padding()
+            }}
+            .navigationTitle(activity.fields.name)
+            .navigationBarTitleDisplayMode(.inline)
+            // Notification Banner
+            .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
+                     , show: $showOverlay)
+            .onAppear(perform: {
+                // Prevent double data loading
+                if (isLoaded) {
+                    return
+                }
+                
+                if (activity.fields.speakersId != nil) {
+                    // Load each speaker extra data
+                    activity.fields.speakersId?.forEach({ (id) in
+                        ApiService.call(Speaker.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Speakers%20%26%20attendees/\(id)") {
+                            (data) in
+                            isLoaded = true;
+                            
+                            if (data != nil) {
+                                speakers.append(data!)
+                            }
+                        } errorHandler: { (error) in
+                            // Display banner with an error
+                            withAnimation { () -> Void in
+                                switch (error) {
+                                case .none:
+                                    break
+                                case .some(.apiError(_, _)):
+                                    self.messageBanner = "An issue occured when querying the API"
+                                    break
+                                case .some(.httpError(_)):
+                                    self.messageBanner = "We couldn't reach the API"
+                                    break
+                                case .some(.parseError(_, _)):
+                                    self.messageBanner = "An issue occured while parsing the data"
+                                    break
+                                }
+                                
+                                self.showOverlay = true
+                            }
+                        }
+                    })
+                }
+                
+                ApiService.call(Location.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Event%20locations/\(activity.fields.locationId?[0] ?? "")") { (data) in
+                    isLoaded = true
+                    location = data
+                    
+                    // Resolve GPS coordinates with an address
+                    LocationUtils.coordinates(forAddress: location?.fields.buildingLocation ?? "", completion: {
+                        (location) in
+                        guard let location = location else {
+                            withAnimation { () -> Void in
+                                self.messageBanner = "Couldn't find the location of the event"
+                                
+                                self.showOverlay = true
                             }
                             
-                            self.showOverlay = true
-                        }
-                    }
-                })
-            }
-            
-            ApiService.call(Location.self, url: "https://api.airtable.com/v0/appXKn0DvuHuLw4DV/Event%20locations/\(activity.fields.locationId?[0] ?? "")") { (data) in
-                isLoaded = true
-                location = data
-                
-                LocationUtils.coordinates(forAddress: location?.fields.buildingLocation ?? "", completion: {
-                    (location) in
-                    guard let location = location else {
-                        withAnimation { () -> Void in
-                            self.messageBanner = "Couldn't find the location of the event"
-                            
-                            self.showOverlay = true
+                            return
                         }
                         
-                        return
+                        DispatchQueue.main.async {
+                            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                            annotations.removeAll()
+                            annotations.append(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                            regionLoaded = true
+                        }
+                    })
+                } errorHandler: { (error) in
+                    // Display banner with an error
+                    withAnimation { () -> Void in
+                        switch (error) {
+                        case .none:
+                            break
+                        case .some(.apiError(_, _)):
+                            self.messageBanner = "An issue occured when querying the API"
+                            break
+                        case .some(.httpError(_)):
+                            self.messageBanner = "We couldn't reach the API"
+                            break
+                        case .some(.parseError(_, _)):
+                            self.messageBanner = "An issue occured while parsing the data"
+                            break
+                        }
+                        
+                        self.showOverlay = true
                     }
-                    
-                    DispatchQueue.main.async {
-                        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-                        annotations.removeAll()
-                        annotations.append(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
-                        regionLoaded = true
-                    }
-                })
-            } errorHandler: { (error) in
-                withAnimation { () -> Void in
-                    switch (error) {
-                    case .none:
-                        break
-                    case .some(.apiError(_, _)):
-                        self.messageBanner = "An issue occured when querying the API"
-                        break
-                    case .some(.httpError(_)):
-                        self.messageBanner = "We couldn't reach the API"
-                        break
-                    case .some(.parseError(_, _)):
-                        self.messageBanner = "An issue occured while parsing the data"
-                        break
-                    }
-                    
-                    self.showOverlay = true
                 }
-            }
-        })
+            })
     }
 }
 
 struct ActivitiesDetails_Previews: PreviewProvider {
+    // Use local fake data
     static var previews: some View {
         ActivitiesDetails(activity: localActivities[1])
     }

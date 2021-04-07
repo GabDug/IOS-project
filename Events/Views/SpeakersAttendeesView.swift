@@ -24,6 +24,7 @@ struct SpeakersAttendeesView: View {
 }
 
 struct SpeakersAttendeesView_Previews: PreviewProvider {
+    // Fake local data JSON
     static var previews: some View {
         SpeakersAttendeesView(speakers: localSpeakers)
     }

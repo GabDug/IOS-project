@@ -55,9 +55,11 @@ struct SponsorDetails: View {
         }}
         .navigationTitle(sponsor.fields.name)
         .navigationBarTitleDisplayMode(.inline)
+        // Banner notification
         .overlay(overlayView: Banner.init(data: Banner.BannerDataModel(title: titleBanner, detail: messageBanner, type: .error), show: $showOverlay)
                  , show: $showOverlay)
         .onAppear(perform: {
+            // Prevent double data loading
             if (isLoaded) {
                 return
             }
@@ -74,6 +76,7 @@ struct SponsorDetails: View {
                             contact.append(data!)
                         }
                     } errorHandler: { (error) in
+                        // Display an error message
                         withAnimation { () -> Void in
                             switch (error) {
                             case .none:
@@ -99,6 +102,7 @@ struct SponsorDetails: View {
 }
 
 struct SponsorDetails_Previews: PreviewProvider {
+    // Fake local data with JSON
     static var previews: some View {
         SponsorDetails(sponsor: localSponsors[1])
     }

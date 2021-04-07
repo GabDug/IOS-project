@@ -71,10 +71,12 @@ struct Banner: View {
         .animation(.easeInOut)
         .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
         .onTapGesture {
+            // Hide on tap
             withAnimation {
                 self.show = false
             }
         }.onAppear(perform: {
+            // Automatically hide after a few sec
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
                     self.show = false
@@ -99,6 +101,7 @@ struct Overlay<T: View>: ViewModifier {
     }
 }
 
+// Extend the view with an overlay element
 extension View {
     func overlay<T: View>( overlayView: T, show: Binding<Bool>) -> some View {
         self.modifier(Overlay.init(show: show, overlayView: overlayView))

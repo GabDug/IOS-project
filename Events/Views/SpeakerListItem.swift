@@ -33,6 +33,7 @@ struct SpeakerListItem: View {
 }
 
 struct SpeakerListItem_Previews: PreviewProvider {
+    // Fake local data
     static var previews: some View {
         SpeakerListItem(
             speaker: localSpeakers[0]
